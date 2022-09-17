@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">RisingTest</string>
+
+    <!-- 로그인 화면 -->
+    <string name="login_view_top_text_normal1">지금 가입하면</string>
+    <string name="login_view_top_text_bold">최대 10만원</string>
+    <string name="login_view_top_text_normal2">쿠폰 증정!</string>
+    <string name="login_to_kakao">카카오톡으로 계속하기</string>
+    <string name="login_to_email">이메일로 로그인</string>
+    <string name="signUp_to_email">이메일로 가입</string>
+    <string name="login_view_problem">로그인에 문제가 있으신가요?</string>
+    <string name="search_non_menber_order">비회원 주문 조회하기</string>
+
+
+    <!-- 메인 바텀 네비게이션 뷰  -->
+    <string name="main_btm_nav_home">홈</string>
+    <string name="main_btm_nav_shopping">쇼핑</string>
+    <string name="main_btm_nav_move_construct_repair">이사/시공/수리</string>
+    <string name="main_btm_nav_my_page">마이페이지</string>
+
+    <!-- 업로드 화면 -->
+    <string name="main_upload_photo">사진 올리기</string>
+    <string name="main_upload_vedio">동영상 올리기</string>
+    <string name="main_upload_review_product">상품 리뷰쓰기</string>
+    <string name="main_upload_review_interior_construction">인테리어시공 리뷰쓰기</string>
+    <string name="main_upload_question_interior">인테리어 질문하기</string>
+    <string name="main_upload_photo_benefit">첫 사진 올리면 1,000P</string>
+    <string name="main_upload_vedio_benefit">매일 인기동영상 최대 4,000P</string>
+    <string name="main_upload_review_product_benefit">포토리뷰 쓰면 250P</string>
+    <string name="main_upload_review_interior_construction_benefit">최대 5,000P</string>
+    <string name="main_upload_notion">집들이, 노하우 업로드 안내</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

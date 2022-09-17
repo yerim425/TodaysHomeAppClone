@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FAFAFA</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#36C5F1</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="gray_line">#DFDFDF</color>
+
+
+    <!-- 로그인 화면 -->
+    <color name="login_kakao_bg">#FAE100</color>
+    <color name="login_kakao_fg">#3B1D1D</color>
+
+    <!-- 메인 바텀 네비게이션 뷰 -->
+    <color name="btm_nav_bg">#F8F9FB</color>
+    <color name="btm_nav_selected">#36C5F1</color>
+    <color name="btm_nav_unselected">#525B62</color>
+
+    <!-- 업로드 유형 뷰 -->
+    <color name="upload_benefit">#029FCD</color>
+    <color name="main_upload_back_ellipse">#CD4C4C4C</color>
+
+
+</resources>

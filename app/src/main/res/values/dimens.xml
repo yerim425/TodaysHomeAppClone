@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 로그인 화면 -->
+    <dimen name="login_view_top_text">24dp</dimen>
+    <dimen name="login_kakao_logo">20dp</dimen>
+    <dimen name="login_kakao_text">14dp</dimen>
+    <dimen name="login_other_sns_logo">45dp</dimen>
+    <dimen name="login_logo_margin">15dp</dimen>
+    <dimen name="login_top_margin">40dp</dimen>
+
+    <!-- 바텀 네비게이션 뷰 -->
+    <dimen name="main_btm_nav_height" tools:override="true">55dp</dimen>
+    <dimen name="main_btm_nav_icon_size" tools:override="true">23dp</dimen>
+
+    <!-- 메인 업로드 플로팅 버튼 -->
+    <dimen name="main_fab_upload_size" tools:override="true">38dp</dimen>
+    <dimen name="main_fab_upload_margin_end" tools:override="true">12dp</dimen>
+    <dimen name="main_fab_upload_margin_bottom" tools:override="true">8dp</dimen>
+
+    <!-- 업로드 유형 뷰 -->
+    <dimen name="main_upload_type_image" tools:override="true">40dp</dimen>
+    <dimen name="main_upload_type_title_text" tools:override="true">16dp</dimen>
+    <dimen name="main_upload_type_benefit_text" tools:override="true">12dp</dimen>
+    <dimen name="main_upload_view_margin" tools:override="true">15dp</dimen>
+    <dimen name="main_upload_notion_text" tools:override="true">10dp</dimen>
+    <dimen name="main_upload_notion_margin" tools:override="true">15dp</dimen>
+    <dimen name="main_upload_view_height" tools:override="true">500dp</dimen>
+
+</resources>
