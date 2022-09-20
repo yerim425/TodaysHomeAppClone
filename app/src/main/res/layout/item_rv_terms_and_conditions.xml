@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:paddingVertical="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cb_terms_and_conditions"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:button="@android:color/transparent"
+        android:checked="false"
+        android:background="@drawable/sel_signup_checkbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_terms_and_conditions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/email_signup_terms_and_conditions"
+        android:textColor="@color/black"
+        android:textSize="@dimen/email_signup_terms_and_condition_text_size"
+        android:bufferType="spannable"
+        app:layout_constraintBottom_toBottomOf="@id/cb_terms_and_conditions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cb_terms_and_conditions"
+        app:layout_constraintTop_toTopOf="@id/cb_terms_and_conditions" />
+    <ImageView
+        android:id="@+id/iv_arrow_right"
+        android:layout_width="@dimen/email_signup_terms_and_conditions_right_arrow_size"
+        android:layout_height="@dimen/email_signup_terms_and_conditions_right_arrow_size"
+        android:src="@drawable/ic_arrow_right"
+        app:tint="@color/black"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

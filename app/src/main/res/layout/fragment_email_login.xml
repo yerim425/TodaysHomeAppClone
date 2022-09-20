@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".src.login.byEmail.loginByEmail.EmailLoginFragment">
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="@dimen/email_login_signup_back_btn_size"
+        android:layout_height="@dimen/email_login_signup_back_btn_size"
+        android:layout_margin="@dimen/email_login_signup_back_btn_margin"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_email_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_login"
+        android:textSize="@dimen/email_login_signup_title_size"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/email_login_signup_title_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/email_login_signup_margin_horizontal"
+        android:layout_marginTop="40dp"
+        android:padding="@dimen/email_login_signup_edit_padding"
+        android:hint="@string/email"
+        android:textSize="@dimen/email_login_signup_edt_size"
+        android:textColorHint="@color/login_signup_gray_text_3"
+        android:background="@drawable/shape_gray_edge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_email_login"/>
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/email_login_signup_margin_horizontal"
+        android:layout_marginTop="10dp"
+        android:padding="@dimen/email_login_signup_edit_padding"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:textSize="@dimen/email_login_signup_edt_size"
+        android:textColorHint="@color/login_signup_gray_text_3"
+        android:background="@drawable/shape_gray_edge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_email"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/do_login"
+        android:textSize="@dimen/email_login_signup_btn_text_size"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:padding="@dimen/email_login_signup_btn_padding"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="@dimen/email_login_signup_margin_horizontal"
+        android:background="@color/login_signup_btn_disabled"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_password"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_reset_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_password"
+        android:textSize="@dimen/email_login_reset_password_text_size"
+        android:textColor="@color/login_signup_gray_text_2"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,8 +11,8 @@
         app:showAsAction="always"/>
     <item
         android:id="@+id/main_btm_nav_shopping"
-        android:icon="@drawable/sel_main_btm_nav_shopping"
-        android:title="@string/main_btm_nav_shopping"
+        android:icon="@drawable/sel_main_btm_nav_store"
+        android:title="@string/main_btm_nav_store"
         android:enabled="true"
         app:showAsAction="always"/>
     <item

@@ -1,5 +1,6 @@
 package com.example.risingtest.config
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,14 +9,14 @@ import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.example.risingtest.util.LoadingDialog
 
 abstract class BaseFragment<B : ViewBinding>(
     private val bind: (View) -> B,
     @LayoutRes layoutResId: Int
 ) : Fragment(layoutResId) {
     private var _binding: B? = null
-    //lateinit var mLoadingDialog: LoadingDialog
-
+    lateinit var mLoadingDialog: LoadingDialog
     protected val binding get() = _binding!!
 
     override fun onCreateView(
@@ -29,6 +30,22 @@ abstract class BaseFragment<B : ViewBinding>(
 
     fun showCustomToast(message: String) {
         Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
+    }
+
+    fun backFragment(){
+        requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+    }
+
+
+    fun showLoadingDialog(context: Context) {
+        mLoadingDialog = LoadingDialog(context)
+        mLoadingDialog.show()
+    }
+
+    fun dismissLoadingDialog() {
+        if (mLoadingDialog.isShowing) {
+            mLoadingDialog.dismiss()
+        }
     }
 
 }

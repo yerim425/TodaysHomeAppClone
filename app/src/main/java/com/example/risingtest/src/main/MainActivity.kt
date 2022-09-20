@@ -3,7 +3,6 @@ package com.example.risingtest.src.main
 import android.animation.ObjectAnimator
 import android.graphics.Paint
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.example.risingtest.R
 import com.example.risingtest.config.BaseActivity
@@ -11,12 +10,12 @@ import com.example.risingtest.databinding.ActivityMainBinding
 import com.example.risingtest.src.main.home.HomeFragment
 import com.example.risingtest.src.main.moveConstructRepair.MoveConstructRepairFragment
 import com.example.risingtest.src.main.myPage.MyPageFragment
-import com.example.risingtest.src.main.shopping.ShoppingFragment
+import com.example.risingtest.src.main.store.StoreFragment
 import com.example.risingtest.src.main.upload.UploadTypeAdapter
 import com.example.risingtest.src.main.upload.UploadTypeItemData
 
 lateinit var homeFragment: HomeFragment
-lateinit var shoppingFragment: ShoppingFragment
+lateinit var shoppingFragment: StoreFragment
 lateinit var moveConstructRepairFragment: MoveConstructRepairFragment
 lateinit var myPageFragment: MyPageFragment
 
@@ -36,7 +35,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                     true
                 }
                 R.id.main_btm_nav_shopping -> {
-                    shoppingFragment = ShoppingFragment()
+                    shoppingFragment = StoreFragment()
                     supportFragmentManager.beginTransaction().replace(R.id.frm_main, shoppingFragment).commitAllowingStateLoss()
                     true
                 }

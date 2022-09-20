@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 로그인 화면 -->
-    <dimen name="login_view_top_text">24dp</dimen>
+    <!-- 메인 로그인 프래그먼트 -->
+    <dimen name="login_view_top_text">24sp</dimen>
     <dimen name="login_kakao_logo">20dp</dimen>
-    <dimen name="login_kakao_text">14dp</dimen>
+    <dimen name="login_kakao_text">14sp</dimen>
     <dimen name="login_other_sns_logo">45dp</dimen>
     <dimen name="login_logo_margin">15dp</dimen>
-    <dimen name="login_top_margin">40dp</dimen>
+    <dimen name="login_signUp_to_email">14sp</dimen>
+    <dimen name="login_to_problem">13sp</dimen>
+    <dimen name="search_non_menber_order">13sp</dimen>
+
+    <!-- 이메일 로그인, 가입 프래그먼트 -->
+    <dimen name="email_login_signup_title_size">18sp</dimen>
+    <dimen name="email_login_signup_title_margin">15dp</dimen>
+    <dimen name="email_login_signup_back_btn_size">26dp</dimen>
+    <dimen name="email_login_signup_back_btn_margin">15dp</dimen>
+    <dimen name="email_login_signup_edt_size">15sp</dimen>
+    <dimen name="email_login_signup_edit_padding">14dp</dimen>
+    <dimen name="email_login_signup_margin_horizontal">15dp</dimen>
+    <dimen name="email_login_signup_btn_text_size">15sp</dimen>
+    <dimen name="email_login_signup_btn_padding">12dp</dimen>
+
+    <dimen name="email_login_reset_password_text_size">12dp</dimen>
+
+    <dimen name="email_signup_input_layout_padding">12dp</dimen>
+    <dimen name="email_signup_interior_expert_text_size">13sp</dimen>
+    <dimen name="email_signup_full_agreement_terms_and_conditions_text_size">15sp</dimen>
+    <dimen name="email_signup_include_agree_selections_text_size">12dp</dimen>
+    <dimen name="email_signup_terms_and_condition_text_size">15sp</dimen>
+    <dimen name="email_signup_recommended_my_friend">15sp</dimen>
+    <dimen name="email_signup_terms_and_conditions_right_arrow_size">15dp</dimen>
+    <dimen name="email_signup_warning_text_size">12sp</dimen>
+    <dimen name="email_signup_warning_margin_top">12dp</dimen>
+    <dimen name="email_signup_btn_text_size">14dp</dimen>
+
 
     <!-- 바텀 네비게이션 뷰 -->
-    <dimen name="main_btm_nav_height" tools:override="true">55dp</dimen>
+    <dimen name="main_btm_nav_height" tools:override="true">56dp</dimen>
     <dimen name="main_btm_nav_icon_size" tools:override="true">23dp</dimen>
 
     <!-- 메인 업로드 플로팅 버튼 -->
@@ -20,11 +47,34 @@
 
     <!-- 업로드 유형 뷰 -->
     <dimen name="main_upload_type_image" tools:override="true">40dp</dimen>
-    <dimen name="main_upload_type_title_text" tools:override="true">16dp</dimen>
-    <dimen name="main_upload_type_benefit_text" tools:override="true">12dp</dimen>
+    <dimen name="main_upload_type_title_text" tools:override="true">16sp</dimen>
+    <dimen name="main_upload_type_benefit_text" tools:override="true">12sp</dimen>
     <dimen name="main_upload_view_margin" tools:override="true">15dp</dimen>
-    <dimen name="main_upload_notion_text" tools:override="true">10dp</dimen>
+    <dimen name="main_upload_notion_text" tools:override="true">10sp</dimen>
     <dimen name="main_upload_notion_margin" tools:override="true">15dp</dimen>
     <dimen name="main_upload_view_height" tools:override="true">500dp</dimen>
+
+    <!-- 메인 프래그먼트 앱바 -->
+    <dimen name="fragment_appbar_icon_width">24dp</dimen>
+    <dimen name="fragment_appbar_padding_vertical">8dp</dimen>
+    <dimen name="fragment_appbar_padding_horizontal">15dp</dimen>
+    <dimen name="fragment_appbar_margin">15dp</dimen>
+    <dimen name="fragment_appbar_search_height">32dp</dimen>
+    <dimen name="fragment_appbar_search_icon_size">22dp</dimen>
+    <dimen name="fragment_appbar_search_padding">3dp</dimen>
+    <dimen name="fragment_appbar_edt_text_size">15sp</dimen>
+    <!-- 메인 프래그먼트 탭바 -->
+    <dimen name="fragment_tabbar_height">43dp</dimen>
+    <dimen name="fragment_tabbar_tab_padding">8dp</dimen>
+
+    <dimen name="fragment_padding">15dp</dimen>
+    <dimen name="fragment_margin">15dp</dimen>
+    <!-- 1. 홈 프래그먼트 -->
+    <!-- 2. 스토어 프래그먼트 -->
+    <dimen name="fragment_store_top_rv_item_icon_size">63dp</dimen>
+    <dimen name="fragment_store_top_rv_item_text_size">12dp</dimen>
+    <dimen name="fragment_store_top_rv_padding">3dp</dimen>
+    <dimen name="fragemtn_store_category_rv_text">11sp</dimen>
+    <dimen name="fragemtn_store_category_rv_icon">55dp</dimen>
 
 </resources>

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">RisingTest</string>
 
-    <!-- 로그인 화면 -->
+    <!-- 메인 로그인 프래그먼트 -->
     <string name="login_view_top_text_normal1">지금 가입하면</string>
     <string name="login_view_top_text_bold">최대 10만원</string>
     <string name="login_view_top_text_normal2">쿠폰 증정!</string>
@@ -11,10 +11,48 @@
     <string name="login_view_problem">로그인에 문제가 있으신가요?</string>
     <string name="search_non_menber_order">비회원 주문 조회하기</string>
 
+    <!-- 이메일 로그인, 가입 프래그먼트 -->
+    <string name="email_login">이메일 로그인</string>
+    <string name="email_signup">이메일 회원가입</string>
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="confirm_password">비밀번호 확인</string>
+    <string name="do_login">로그인 하기</string>
+    <string name="reset_password">비밀번호 재설정</string>
+    <string name="email_login_mismatch">아이디 또는 비밀번호가 잘못되었습니다.</string>
 
+    <string name="nickname_not_duplicated">별명(중복불가)</string>
+    <string name="email_signup_interior_expert">인테리어 전문가이시다면</string>
+    <string name="email_signup_email_authenticate">이메일 인증하기</string>
+    <string name="email_signup_full_agreement_terms_and_conditions">약관 전체동의</string>
+    <string name="email_signup_include_agree_selections">선택항목에 대한 동의 포함</string>
+    <string name="email_signup_over_age_14">만 14세 이상입니다. (필수)</string>
+    <string name="email_signup_terms_and_conditions">이용약관 (필수)</string>
+    <string name="email_signup_agree_collect_and_use">개인정보수집 및 이용동의 (필수)</string>
+    <string name="email_signup_agree_use_marketing">개인정보 마케팅 활용 동의 (선택)</string>
+    <string name="email_signup_receive_notification">이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신 (선택)</string>
+    <string name="email_signup_essential">(필수)</string>
+    <string name="email_signup_choice">(선택)</string>
+    <string name="email_signup_recommended_by_friend">친구에게 추천받고 오셨나요?(선택사항)</string>
+    <string name="email_signup_input_recommendation_code">추천코드 입력</string>
+    <string name="check">확인</string>
+    <string name="email_signup_complete">회원가입 완료</string>
+    <string name="email_signup_warning_email_empty">이메일을 입력해주세요.</string>
+    <string name="email_signup_warning_email_format_invalied">이메일 형식이 올바르지 않습니다.</string>
+    <string name="email_signup_warning_email_already_subsribed">이미 카카오톡 간펀가입으로 가입된 메일입니다. \'카카오톡 계속하기\'를 눌러 로그인해주세요</string>
+    <string name="email_signup_warning_password_format_invalied">비밀번호는 영문, 숫자를 포함하여 8자 이상이어야 합니다.</string>
+    <string name="email_signup_warning_password_confirm_empty">확인을 위해 비밀번호를 한 번 더 입력해주세요.</string>
+    <string name="email_signup_warning_password_confirm_mismatch">비밀번호가 일치하지 않습니다.</string>
+    <string name="email_signup_warning_nickname_format_invalied">별명을 2~15자 내로 입력해주세요.</string>
+    <string name="email_signup_warning_nickname_in_use">사용 중인 별명입니다.</string>
+    <string name="email_signup_recommend_nickname_line1">이 별명은 어떠신가요?</string>
+    <string name="email_signup_recommend_nickname_line2">별명은 언제든 수정하실 수 있습니다.</string>
+    <string name="email_signup_use">사용하기</string>
+    <string name="email_signup_warning_agreement">필수 항목에 동의해주세요.</string>
+    
     <!-- 메인 바텀 네비게이션 뷰  -->
     <string name="main_btm_nav_home">홈</string>
-    <string name="main_btm_nav_shopping">쇼핑</string>
+    <string name="main_btm_nav_store">스토어</string>
     <string name="main_btm_nav_move_construct_repair">이사/시공/수리</string>
     <string name="main_btm_nav_my_page">마이페이지</string>
 
@@ -29,6 +67,70 @@
     <string name="main_upload_review_product_benefit">포토리뷰 쓰면 250P</string>
     <string name="main_upload_review_interior_construction_benefit">최대 5,000P</string>
     <string name="main_upload_notion">집들이, 노하우 업로드 안내</string>
+
+    <!-- 홈 프래그먼트 -->
+    <string name="home_search">오늘의집 통합검색</string>
+    <string name="home_tabbar_popluar">인기</string>
+    <string name="home_tabbar_following">팔로잉</string>
+    <string name="home_tabbar_photo">사진</string>
+    <string name="home_tabbar_housewarming">집들이</string>
+    <string name="home_tabbar_know_how">노하우</string>
+    <string name="home_tabbar_expert_housewarming">전문가집들이</string>
+    <string name="home_tabbar_q_and_a">질문과답변</string>
+
+
+
+
+    <!-- 스토어 프래그먼트 -->
+    <string name="store_search">스토어 검색</string>
+    <!-- 스토어 프래그먼트 탭바 -->
+    <string name="store_tabbar_store_home">스토어홈</string>
+    <string name="store_tabbar_best">베스트</string>
+    <string name="store_tabbar_todays_deal">오늘의딜</string>
+    <string name="store_tabbar_fabric_special_rice">페브릭특가</string>
+    <string name="store_tabbar_refurb_market">리퍼마켓</string>
+    <string name="store_tabbar_oh_goods">오!굿즈</string>
+    <string name="store_tabbar_quick_delivery">빠른배송</string>
+    <string name="store_tabbar_premium">프리미엄</string>
+    <string name="store_tabbar_exhibitions">기획전</string>
+    <!-- 스토어 탑 리사이클러뷰 -->
+    <string name="store_rv_authmn_blanket">가을이불</string>
+    <string name="store_rv_best">베스트</string>
+    <string name="store_rv_todays_deal">오늘의딜</string>
+    <string name="store_rv_oh_goods">오!굿즈</string>
+    <string name="store_rv_quick_delivery">빠른배송</string>
+    <string name="store_rv_premium">프리미엄</string>
+    <string name="store_rv_refurb_market">리퍼마켓</string>
+    <string name="store_rv_new_special_price">신상특가</string>
+    <string name="store_rv_food_market">푸드마켓</string>
+    <string name="store_rv_exhibitions">기획전</string>
+    <string name="HOT">HOT</string>
+    <!-- 스토어 메인 리사이클러뷰 -->
+    <string name="store_rv_main_title_todays_deal">오늘의딜</string>
+    <string name="store_rv_main_title_product_for_user">님을 위한 상품</string>
+    <string name="store_rv_main_title_recent_product">최근 본 상품</string>
+    <string name="store_rv_main_title_related_product">내가 본 상품의 연관상품</string>
+    <string name="store_rv_main_title_popular_product">인기상품</string>
+    <string name="store_rv_main_total_category">카테고리 전체</string>
+    <string name="store_rv_main_see_more">더보기</string>
+    <!-- 스토어 카테고리 리사이클러뷰 -->
+    <string name="category">카테고리</string>
+    <string name="store_rv_category_furniture">가구</string>
+    <string name="store_rv_category_fabric">패브릭</string>
+    <string name="store_rv_category_home_appliance">가전</string>
+    <string name="store_rv_category_child">유아·아동</string>
+    <string name="store_rv_category_light">조명</string>
+    <string name="store_rv_category_kitchenware">주방용품</string>
+    <string name="store_rv_category_deco_plant">데코·식물</string>
+    <string name="store_rv_category_storage">수납·정리</string>
+    <string name="store_rv_category_daily_goods">생활용품</string>
+    <string name="store_rv_category_daily_necessity">생필품</string>
+    <string name="store_rv_category_tool">공구·DIY</string>
+    <string name="store_rv_category_interior_construction">인테리어시공</string>
+    <string name="store_rv_category_companion_animal">반려동물</string>
+    <string name="store_rv_category_camping">캠핑용품</string>
+    <string name="store_rv_category_indoor_exercise">실내운동</string>
+    <string name="store_rv_category_rental">렌탈</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
