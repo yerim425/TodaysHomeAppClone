@@ -1,12 +1,10 @@
 package com.example.risingtest.src.login.byEmail.loginByEmail
 
-import com.example.risingtest.src.login.byEmail.byEmailModels.LogInResponse
-import com.example.risingtest.src.login.byEmail.byEmailModels.SignUpResponse
-import com.example.risingtest.src.login.byEmail.byEmailModels.UserResponse
+import com.example.risingtest.src.login.byEmail.models.EmailLogInResponse
 
 interface EmailLoginFragmentInterface {
 
     // 유저 로그인 요청 콜백
-    fun onPostLogInSuccess(response: LogInResponse)
+    fun onPostLogInSuccess(response: EmailLogInResponse)
     fun onPostLogInFailure(message: String)
 }

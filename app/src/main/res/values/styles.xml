@@ -22,8 +22,15 @@
         <item name="android:textStyle">bold</item>
 
     </style>
-    <style name="fragment_tabbar_margin_style">
-        <item name="android:tabStripEnabled">false</item>
+    <style name="scrap_tabbar_margin_style">
+        <item name="marginHorizontal">0dp</item>
 
     </style>
+
+    <style name="scrap_collapsed_title_style">
+        <item name="android:textSize">17dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>
+

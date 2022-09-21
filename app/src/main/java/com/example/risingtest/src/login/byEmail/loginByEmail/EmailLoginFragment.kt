@@ -10,8 +10,8 @@ import com.example.risingtest.R
 import com.example.risingtest.config.BaseFragment
 import com.example.risingtest.databinding.FragmentEmailLoginBinding
 import com.example.risingtest.src.login.LoginActivity
-import com.example.risingtest.src.login.byEmail.byEmailModels.LogInResponse
-import com.example.risingtest.src.login.byEmail.byEmailModels.PostLogInRequest
+import com.example.risingtest.src.login.byEmail.models.EmailLogInResponse
+import com.example.risingtest.src.login.byEmail.models.PostEmailLogInRequest
 import com.example.risingtest.src.main.MainActivity
 
 
@@ -33,14 +33,14 @@ class EmailLoginFragment : BaseFragment<FragmentEmailLoginBinding>(
                 if(p0 != null && !binding.edtEmail.text.toString().equals("")){
                     if(!binding.edtPassword.text.toString().equals("")){
                         isActived = true
-                        binding.btnLogin.background = resources.getDrawable(R.drawable.shape_login_signup_blue_btn_enabled)
+                        binding.btnLogin.background = resources.getDrawable(R.drawable.shape_blue_btn_enabled)
                     }else{
                         isActived = false
-                        binding.btnLogin.background = resources.getDrawable(R.drawable.shape_login_signup_blue_btn_disabled)
+                        binding.btnLogin.background = resources.getDrawable(R.drawable.shape_blue_btn_disabled)
                     }
                 }else{
                     isActived = false
-                    binding.btnLogin.background = resources.getDrawable(R.drawable.shape_login_signup_blue_btn_disabled)
+                    binding.btnLogin.background = resources.getDrawable(R.drawable.shape_blue_btn_disabled)
                 }
 
             }
@@ -53,14 +53,14 @@ class EmailLoginFragment : BaseFragment<FragmentEmailLoginBinding>(
                 if(p0 != null && !binding.edtPassword.text.toString().equals("")){
                     if(!binding.edtEmail.text.toString().equals("")){
                         isActived = true
-                        binding.btnLogin.background = resources.getDrawable(R.drawable.shape_login_signup_blue_btn_enabled)
+                        binding.btnLogin.background = resources.getDrawable(R.drawable.shape_blue_btn_enabled)
                     }else{
                         isActived = false
-                        binding.btnLogin.background = resources.getDrawable(R.drawable.shape_login_signup_blue_btn_disabled)
+                        binding.btnLogin.background = resources.getDrawable(R.drawable.shape_blue_btn_disabled)
                     }
                 }else{
                     isActived = false
-                    binding.btnLogin.background = resources.getDrawable(R.drawable.shape_login_signup_blue_btn_disabled)
+                    binding.btnLogin.background = resources.getDrawable(R.drawable.shape_blue_btn_disabled)
                 }
             }
         })
@@ -78,7 +78,7 @@ class EmailLoginFragment : BaseFragment<FragmentEmailLoginBinding>(
                 var email = binding.edtEmail.text.toString()
                 var password = binding.edtPassword.text.toString()
 
-                val postRequest = PostLogInRequest(email = email, password = password)
+                val postRequest = PostEmailLogInRequest(email = email, password = password)
                 //showLoadingDialog(requireContext())
                 EmailLoginService(this).tryPostLogIn(postRequest)
 
@@ -95,7 +95,7 @@ class EmailLoginFragment : BaseFragment<FragmentEmailLoginBinding>(
     }
 
 
-    override fun onPostLogInSuccess(response: LogInResponse) {
+    override fun onPostLogInSuccess(response: EmailLogInResponse) {
         //dismissLoadingDialog()
         startActivity(Intent(requireContext(), MainActivity::class.java))
     }

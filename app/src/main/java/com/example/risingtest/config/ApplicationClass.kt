@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 class ApplicationClass: Application() {
-    val API_URL = "http://prod.today-home.shop/"
+    val API_URL = "https://prod.today-home.shop/"
 
     // 테스트 서버 주소
     // val API_URL = "http://dev-api.test.com/"

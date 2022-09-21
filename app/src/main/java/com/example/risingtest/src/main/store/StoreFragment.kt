@@ -1,5 +1,6 @@
 package com.example.risingtest.src.main.store
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
@@ -15,6 +16,8 @@ import com.example.risingtest.src.main.store.storeMainRv.StoreMainRvItemData
 import com.example.risingtest.src.main.store.storeMainRv.storeSecondRv.ProductItemData
 import com.example.risingtest.src.main.store.storeTopRv.StoreTopRvAdapter
 import com.example.risingtest.src.main.store.storeTopRv.StoreTopRvItemData
+import com.example.risingtest.src.scrap.ScrapActivity
+import com.example.risingtest.src.shoppingBasket.ShoppingBasketActivity
 
 class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::bind, R.layout.fragment_store) {
 
@@ -42,6 +45,15 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::b
         storeMainAdapter.getListFromView(setMainRvItemList())
         binding.rvStoreMain.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.rvStoreMain.adapter = storeMainAdapter
+
+
+        binding.ivStoreAppbarScrap.setOnClickListener {
+            startActivity(Intent(requireContext(), ScrapActivity::class.java))
+        }
+
+        binding.ivStoreAppbarBasket.setOnClickListener {
+            startActivity(Intent(requireContext(), ShoppingBasketActivity::class.java))
+        }
 
     }
 

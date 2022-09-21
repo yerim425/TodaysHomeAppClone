@@ -27,7 +27,7 @@
             </item>
             <!-- 이미지 영역 -->
             <item
-                android:drawable="@drawable/ic_checked"
+                android:drawable="@drawable/ic_checked_blue"
                 android:width="13dp" android:height="13dp" android:gravity="center"/>
         </layer-list>
     </item>

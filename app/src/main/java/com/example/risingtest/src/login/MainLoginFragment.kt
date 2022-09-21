@@ -10,6 +10,9 @@ import com.example.risingtest.config.BaseFragment
 import com.example.risingtest.databinding.FragmentMainLoginBinding
 import com.example.risingtest.src.login.byEmail.loginByEmail.EmailLoginFragment
 import com.example.risingtest.src.login.byEmail.signUpByEmail.EmailSignUpFragment
+import com.example.risingtest.src.login.byKakao.KakaoLoginService
+import com.example.risingtest.src.login.byKakao.models.KakaoLoginResponse
+import com.example.risingtest.src.login.byKakao.models.PostKakaoLoginRequest
 import com.example.risingtest.src.main.MainActivity
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
@@ -19,7 +22,7 @@ import com.kakao.sdk.user.UserApiClient
 
 
 class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
-    FragmentMainLoginBinding::bind, R.layout.fragment_main_login), LoginActivity.onBackPressedListener {
+    FragmentMainLoginBinding::bind, R.layout.fragment_main_login), LoginActivity.onBackPressedListener, MainLoginFragmentInterface {
 
 
 
@@ -49,15 +52,18 @@ class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
             if (error != null) {
                 Log.d("loginActivity", "카카오계정으로 로그인 실패 : ${error}")
             } else if (token != null) {
-                //TODO: 최종적으로 카카오로그인 및 유저정보 가져온 결과
                 UserApiClient.instance.me { user, error ->
                     Log.d("loginActivity", "카카오계정으로 로그인 성공 \n\n " +
                             "token: ${token.accessToken} \n\n " +
                             "me: ${user}")
 
                     sSharedPreferences.edit().putString("loginStatus", "true").commit()
-                    // 서버에 accessToken을 보내고 받은 회원 정보로 로그인 한다...
 
+                    //val postRequest = PostKakaoLoginRequest(code = "${token.accessToken}")
+                    //showLoadingDialog(requireContext())
+                    //KakaoLoginService(this).tryPostKakaoLogin(postRequest)
+
+                    // 서버 연동 구현하면 제거하기
                     startActivity(Intent(requireContext(), MainActivity::class.java))
                     requireActivity().finish()
                 }
@@ -67,24 +73,25 @@ class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
         // 카카오톡이 설치되어 있으면 카카오톡으로 로그인, 아니면 카카오계정으로 로그인
         if (UserApiClient.instance.isKakaoTalkLoginAvailable(requireContext())) {
             UserApiClient.instance.loginWithKakaoTalk(requireContext()) { token, error ->
-                if (error != null) {
+                if (error != null) { // 카카오톡 앱에 로그인된 계정이 없음
                     Log.d("loginActivity", "카카오톡으로 로그인 실패 : ${error}")
-
-                    // 사용자가 카카오톡 설치 후 디바이스 권한 요청 화면에서 로그인을 취소한 경우,
-                    // 의도적인 로그인 취소로 보고 카카오계정으로 로그인 시도 없이 로그인 취소로 처리 (예: 뒤로 가기)
                     if (error is ClientError && error.reason == ClientErrorCause.Cancelled) {
-
                         return@loginWithKakaoTalk
                     }
-
                     // 카카오톡에 연결된 카카오계정이 없는 경우, 카카오계정으로 로그인 시도
                     UserApiClient.instance.loginWithKakaoAccount(requireContext(), callback = callback)
-                } else if (token != null) {
-                    Log.d("loginActivity", "카카오톡으로 로그인 성공 ${token.accessToken}")
+
+                } else if (token != null) { // 카카오 토큰 받아온 후 서버로 보냄
+
+                    Log.d("loginActivity", "카카오계정으로 로그인 성공, token: ${token.accessToken}")
 
                     sSharedPreferences.edit().putString("loginStatus", "true").commit()
-                    // 서버에 accessToken을 보내고 받은 회원 정보로 로그인 한다...
 
+                    //val postRequest = PostKakaoLoginRequest(code = "${token.accessToken}")
+                    //showLoadingDialog(requireContext())
+                    //KakaoLoginService(this).tryPostKakaoLogin(postRequest)
+
+                    // 서버 연동 구현하면 제거하기
                     startActivity(Intent(requireContext(), MainActivity::class.java))
                     requireActivity().finish()
                 }
@@ -96,6 +103,17 @@ class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
 
     override fun onBackPressed() {
         requireActivity().finish()
+    }
+
+    override fun onPostKakaoLogInSuccess(response: KakaoLoginResponse) {
+        dismissLoadingDialog()
+        startActivity(Intent(requireContext(), MainActivity::class.java))
+        requireActivity().finish()
+    }
+
+    override fun onPostKakaoLogInFailure(message: String) {
+        dismissLoadingDialog()
+        showCustomToast("카카오 로그인 실패")
     }
 
 }

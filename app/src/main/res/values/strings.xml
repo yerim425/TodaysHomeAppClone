@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">RisingTest</string>
 
+    <!-- appbar -->
+    <string name="appbar_scrolling_view_behavior" translatable="false">
+        com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior
+    </string>
+
     <!-- 메인 로그인 프래그먼트 -->
     <string name="login_view_top_text_normal1">지금 가입하면</string>
     <string name="login_view_top_text_bold">최대 10만원</string>
@@ -49,14 +54,14 @@
     <string name="email_signup_recommend_nickname_line2">별명은 언제든 수정하실 수 있습니다.</string>
     <string name="email_signup_use">사용하기</string>
     <string name="email_signup_warning_agreement">필수 항목에 동의해주세요.</string>
-    
+
     <!-- 메인 바텀 네비게이션 뷰  -->
     <string name="main_btm_nav_home">홈</string>
     <string name="main_btm_nav_store">스토어</string>
     <string name="main_btm_nav_move_construct_repair">이사/시공/수리</string>
     <string name="main_btm_nav_my_page">마이페이지</string>
 
-    <!-- 업로드 화면 -->
+    <!-- 업로드 다이얼로그 -->
     <string name="main_upload_photo">사진 올리기</string>
     <string name="main_upload_vedio">동영상 올리기</string>
     <string name="main_upload_review_product">상품 리뷰쓰기</string>
@@ -68,6 +73,52 @@
     <string name="main_upload_review_interior_construction_benefit">최대 5,000P</string>
     <string name="main_upload_notion">집들이, 노하우 업로드 안내</string>
 
+    <!-- 스크랩 액티비티 -->
+    <string name="share">공유</string>
+    <string name="scrapbook">스크랩북</string>
+    <string name="product">상품</string>
+    <string name="edit">편집</string>
+    <string name="scrap_no_contents">컨텐츠가 없습니다.</string>
+    <string name="scrap_no_folder">폴더가 없습니다.</string>
+    <string name="scrap_folder_move">폴더이동</string>
+    <string name="cancellation">취소</string>
+    <string name="deletion">삭제</string>
+
+    <!-- 장바구니 액티비티 -->
+    <string name="shopping_basket">장바구니</string>
+    <string name="go_to_pick_up_product">상품 담으러 가기</string>
+    <string name="all_select">모두선택</string>
+    <string name="delete_select">선택삭제</string>
+    <string name="total_product_amount">총 상품금액</string>
+    <string name="total_delivery_charge">총 배달비</string>
+    <string name="total_discount_amount">총 할인금액</string>
+    <string name="payment_amount">결제금액</string>
+    <string name="won">원</string>
+    <string name="products_purchased_by_other_customers">다른 고객이 함께 구매한 상품</string>
+    <string name="buy_right_away">바로구매</string>
+
+
+    <!-- 상품 상세 액티비티 -->
+    <string name="color">색상</string>
+    <string name="option">옵션</string>
+    <string name="benefit">혜택</string>
+    <string name="see_benefit">혜택보기</string>
+    <string name="delivery">배송</string>
+    <string name="regular_delivery">일반택배</string>
+    <string name="expect_arrive">도착예정</string>
+    <string name="brand_home">브랜드홈</string>
+    <string name="styling_shot_of_users">유저들의 스타일링샷</string>
+    <string name="see_all_styling_shot">스타일링샷 전체보기</string>
+    <string name="upload_photo">사진 올리기</string>
+    <string name="ad_title_of_first_photo">첫 사진 올리면 1,000 포인트를 드려요.</string>
+    <string name="ad_subtitle_of_first_photo">지금 살고 있는 공간을 공유하고\n포인트를 받아 쇼핑도 즐겨 보세요!</string>
+    <string name="product_information">상품정보</string>
+    <string name="review">리뷰</string>
+    <string name="inquiry">문의</string>
+    <string name="delivery_refund">배송/환불</string>
+    <string name="recommendation">추천</string>
+
+
     <!-- 홈 프래그먼트 -->
     <string name="home_search">오늘의집 통합검색</string>
     <string name="home_tabbar_popluar">인기</string>
@@ -77,8 +128,6 @@
     <string name="home_tabbar_know_how">노하우</string>
     <string name="home_tabbar_expert_housewarming">전문가집들이</string>
     <string name="home_tabbar_q_and_a">질문과답변</string>
-
-
 
 
     <!-- 스토어 프래그먼트 -->

@@ -1,8 +1,8 @@
-package com.example.risingtest.src.login.byEmail.byEmailModels
+package com.example.risingtest.src.login.byEmail.models
 
 import com.google.gson.annotations.SerializedName
 
-data class ResultSignUp(
+data class ResultEmailSignUp(
         @SerializedName("userId") val userId: Int,
         @SerializedName("jwt") val jwt: String
 )

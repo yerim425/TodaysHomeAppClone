@@ -95,7 +95,6 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/layout_tab"
-            style="@style/fragment_tabbar_margin_style"
             android:layout_width="match_parent"
             android:layout_height="@dimen/fragment_tabbar_height"
             android:background="@color/white"
@@ -157,6 +156,13 @@
                 android:text="@string/store_tabbar_exhibitions" />
 
         </com.google.android.material.tabs.TabLayout>
+
+        <View
+            android:id="@+id/line_tabbar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_line"/>
+
     </com.google.android.material.appbar.AppBarLayout>
 
 

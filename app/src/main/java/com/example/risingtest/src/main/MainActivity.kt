@@ -101,4 +101,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
         return list
     }
+
+    override fun onResume() {
+        super.onResume()
+        // 메뉴 엑티비티 에니메이션
+        overridePendingTransition(R.drawable.anim_slide_in_left, R.drawable.anim_slide_out_right)
+    }
 }

@@ -97,79 +97,21 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/layout_tab"
-        android:visibility="gone"
-        style="@style/fragment_tabbar_margin_style"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/fragment_tabbar_height"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
+    <View
+        android:id="@+id/line_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_line_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lyaout_appbar"
-        app:tabIndicatorColor="@color/fragment_tabbar_selected"
-        app:tabIndicatorFullWidth="true"
-        app:tabIndicatorHeight="2dp"
-        app:tabMinWidth="0dp"
-        app:tabMode="scrollable"
-        app:tabGravity="start"
-        app:tabPaddingStart="10dp"
-        app:tabPaddingEnd="10dp"
-        app:tabRippleColor="@color/white"
-        app:tabSelectedTextColor="@color/fragment_tabbar_selected"
-        app:tabTextAppearance="@style/fragment_tabbar_text_style"
-        app:tabTextColor="@color/fragment_tabbar_unselected">
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/store_tabbar_store_home" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/store_tabbar_best" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/store_tabbar_todays_deal" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/store_tabbar_fabric_special_rice" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/store_tabbar_refurb_market" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/store_tabbar_oh_goods" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/store_tabbar_premium" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/store_tabbar_exhibitions" />
-
-    </com.google.android.material.tabs.TabLayout>
-
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_tab"
+        app:layout_constraintTop_toBottomOf="@id/lyaout_appbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 

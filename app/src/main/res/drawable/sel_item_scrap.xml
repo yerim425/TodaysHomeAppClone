@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Unchecked -->
-    <item android:state_checked="false">
-        <shape>
-            <!-- 배경 -->
-            <item>
-                <shape>
-                    <solid android:color="@color/item_scrap_unchecked" />
-                </shape>
-            </item>
-            <item
-                android:drawable="@drawable/ic_scrap_unchecked"
-                android:color="@color/white"
-                android:gravity="center"/>
-        </shape>
-    </item>
-    <!-- Checked -->
-    <item android:state_checked="true">
-        <layer-list>
-            <!-- 배경 -->
-            <item>
-                <shape>
-                    <solid android:color="@android:color/transparent" />
-                </shape>
-            </item>
-            <!-- 이미지 영역 -->
-            <item
-                android:drawable="@drawable/ic_scrap_checked"
-                android:color="@color/colorAccent"
-                android:gravity="center"/>
-        </layer-list>
-    </item>
+    <item android:state_checked="true"
+        android:drawable="@drawable/ic_scrap_checked"/>
+    <item android:state_checked="false"
+        android:drawable="@drawable/ic_scrap_unchecked"/>
 </selector>
