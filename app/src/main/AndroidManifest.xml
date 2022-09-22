@@ -19,7 +19,10 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".shoppingBasketActivity"
+            android:name=".src.main.store.productDetail.ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".src.shoppingBasket.ShoppingBasketActivity"
             android:exported="false" />
         <activity
             android:name=".src.scrap.ScrapActivity"

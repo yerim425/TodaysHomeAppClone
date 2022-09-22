@@ -17,7 +17,8 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
 
         Handler().postDelayed({
             loginCheck()
-            //
+            //startActivity(Intent(this, MainActivity::class.java))
+            //finish()
         }, 1500)
 
 

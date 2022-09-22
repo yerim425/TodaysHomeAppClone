@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.risingtest.R
 import com.example.risingtest.config.BaseActivity
 import com.example.risingtest.databinding.ActivityShoppingBasketBinding
+import com.example.risingtest.src.shoppingBasket.shoppingBasketFragment.ShoppingBasketFragment
 
 class ShoppingBasketActivity : BaseActivity<ActivityShoppingBasketBinding>(ActivityShoppingBasketBinding::inflate) {
 
@@ -18,6 +19,8 @@ class ShoppingBasketActivity : BaseActivity<ActivityShoppingBasketBinding>(Activ
 
         // 장바구니에 담은 상품이 없으면 noProductInBasketFragment
         // 있으면 ShoppingBasketFragment
+
+        supportFragmentManager.beginTransaction().replace(R.id.frm_shopping_basket, ShoppingBasketFragment()).commitAllowingStateLoss()
 
 
         binding.ivCancelAppbar.setOnClickListener {

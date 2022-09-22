@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".src.shoppingBasket.fragments.ShoppingBasketFragment">
+    tools:context=".src.shoppingBasket.shoppingBasketFragment.ShoppingBasketFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_all_select"
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/fragment_padding"
         android:paddingVertical="10dp"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -72,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:overScrollMode="never"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -80,7 +82,7 @@
                 android:id="@+id/line_payment_amount"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_padding"
-                android:background="@color/shopping_basket_view_thick_line"
+                android:background="@color/shopping_basket_view_line_color"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_shopping_basket"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -266,7 +268,7 @@
                 android:id="@+id/line_other_products"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_padding"
-                android:background="@color/shopping_basket_view_thick_line"
+                android:background="@color/shopping_basket_view_line_color"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layout_payment_amount"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -297,8 +299,9 @@
                     android:id="@+id/rv_other_products"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="@dimen/fragment_padding"
-                    android:clipToPadding="true"
+                    android:paddingStart="@dimen/fragment_padding"
+                    android:paddingEnd="5dp"
+                    android:clipToPadding="false"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_other_products"
                     app:layout_constraintEnd_toEndOf="parent"/>
@@ -309,7 +312,7 @@
                 android:id="@+id/line_bottom"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_padding"
-                android:background="@color/shopping_basket_view_thick_line"
+                android:background="@color/shopping_basket_view_line_color"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layout_other_products"
                 app:layout_constraintBottom_toBottomOf="parent"

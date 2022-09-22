@@ -61,7 +61,7 @@
 
     <!-- 장바구니 액티비티 -->
     <dimen name="appbar_title_text_size">18sp</dimen>
-    <dimen name="appbar_icon_size">22dp</dimen>
+    <dimen name="appbar_icon_size">24dp</dimen>
     <dimen name="shopping_basket_amount_text_size">15sp</dimen>
     <dimen name="shopping_basket_amount_num_size">17sp</dimen>
     <dimen name="shopping_basket_payment_amount_text_size">16sp</dimen>

@@ -23,13 +23,13 @@
             app:titleCollapseMode="fade"
             app:titleEnabled="true"
             app:scrimVisibleHeightTrigger="180dp"
-            app:collapsedTitleGravity="center"
             android:fitsSystemWindows="true"
+            app:collapsedTitleGravity="center"
             app:collapsedTitleTextAppearance="@style/scrap_collapsed_title_style"
             app:title="@string/scrapbook"
             app:expandedTitleGravity="center"
             app:expandedTitleTextColor="@android:color/transparent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snapMargins">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -90,16 +90,16 @@
 
                 <ImageView
                     android:id="@+id/iv_back"
-                    android:layout_width="@dimen/fragment_appbar_search_icon_size"
-                    android:layout_height="@dimen/fragment_appbar_search_icon_size"
+                    android:layout_width="@dimen/appbar_icon_size"
+                    android:layout_height="@dimen/appbar_icon_size"
                     android:layout_gravity="start"
                     android:layout_marginStart="@dimen/fragment_margin"
                     android:src="@drawable/ic_back"/>
 
                 <ImageView
                     android:id="@+id/iv_share"
-                    android:layout_width="@dimen/fragment_appbar_search_icon_size"
-                    android:layout_height="@dimen/fragment_appbar_search_icon_size"
+                    android:layout_width="@dimen/appbar_icon_size"
+                    android:layout_height="@dimen/appbar_icon_size"
                     android:layout_gravity="end"
                     android:layout_marginEnd="@dimen/fragment_margin"
                     android:src="@drawable/ic_share"/>

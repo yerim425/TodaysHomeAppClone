@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/no_product_in_basket_bg"
-    tools:context=".src.shoppingBasket.fragments.NoProductInBasketFragment">
+    tools:context=".src.shoppingBasket.NoProductInBasketFragment">
 
     <ImageView
         android:layout_width="200dp"

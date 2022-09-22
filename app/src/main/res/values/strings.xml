@@ -96,7 +96,11 @@
     <string name="won">원</string>
     <string name="products_purchased_by_other_customers">다른 고객이 함께 구매한 상품</string>
     <string name="buy_right_away">바로구매</string>
-
+    <string name="change_option">옵션변경</string>
+    <string name="add_bundled_delivery_product">묶음배송 상품 추가하기</string>
+    <string name="if_you_pay_by_17_o_click_on_weekdays">평일 17:00까지 결제시</string>
+    <string name="today_departure_deadline">오늘출발 마감</string>
+    <string name="sceduled_to_be_sent">발송 예정</string>
 
     <!-- 상품 상세 액티비티 -->
     <string name="color">색상</string>
@@ -117,6 +121,7 @@
     <string name="inquiry">문의</string>
     <string name="delivery_refund">배송/환불</string>
     <string name="recommendation">추천</string>
+    <string name="special_price">특가</string>
 
 
     <!-- 홈 프래그먼트 -->

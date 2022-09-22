@@ -73,16 +73,16 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iv_store_appbar_scrap"
+                    android:id="@+id/iv_home_appbar_scrap"
                     android:layout_width="@dimen/fragment_appbar_icon_width"
                     android:layout_height="@dimen/fragment_appbar_search_height"
                     android:src="@drawable/ic_scrap"
                     android:layout_marginEnd="@dimen/fragment_appbar_margin"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/iv_store_appbar_basket"/>
+                    app:layout_constraintEnd_toStartOf="@+id/iv_home_appbar_basket"/>
 
                 <ImageView
-                    android:id="@+id/iv_store_appbar_basket"
+                    android:id="@+id/iv_home_appbar_basket"
                     android:layout_width="@dimen/fragment_appbar_icon_width"
                     android:layout_height="@dimen/fragment_appbar_search_height"
                     android:src="@drawable/ic_basket"
@@ -178,32 +178,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hello world"
-                android:textSize="100dp">
-            </TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hello world"
-                android:textSize="100dp">
-            </TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hello world"
-                android:textSize="100dp">
-            </TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hello world"
-                android:textSize="100dp">
-            </TextView>
-
 
         </LinearLayout>
 
