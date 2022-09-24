@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/fragment_margin"
+    android:layout_marginVertical="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_users_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_users_profile"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/img_prod1_1"
+            app:riv_corner_radius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_users_nickname"
+            app:layout_constraintBottom_toBottomOf="@id/ratingBar_users_rating"/>
+
+        <TextView
+            android:id="@+id/tv_users_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="닉네임"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/iv_users_profile"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar_users_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:max="5"
+            android:numStars="5"
+            android:rating="3"
+            android:stepSize="0.5"
+            android:scaleY="1.2"
+            android:scaleX="1.0"
+            android:transformPivotX="35dp"
+            android:transformPivotY="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            app:layout_constraintStart_toEndOf="@id/iv_users_profile"
+            app:layout_constraintTop_toBottomOf="@id/tv_users_nickname"/>
+
+        <TextView
+            android:id="@+id/tv_review_createdAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2022.09.16"
+            android:textSize="13sp"
+            android:textColor="@color/gray_text_dark2"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/ratingBar_users_rating"
+            app:layout_constraintTop_toTopOf="@id/ratingBar_users_rating"
+            app:layout_constraintBottom_toBottomOf="@id/ratingBar_users_rating"/>
+
+        <TextView
+            android:id="@+id/tv_bought_at_todays_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="· 오늘의집 구매"
+            android:textSize="13sp"
+            android:textColor="@color/gray_text_dark2"
+            android:layout_marginStart="3dp"
+            app:layout_constraintStart_toEndOf="@id/tv_review_createdAt"
+            app:layout_constraintTop_toTopOf="@id/ratingBar_users_rating"
+            app:layout_constraintBottom_toBottomOf="@id/ratingBar_users_rating"/>
+
+
+        <TextView
+            android:id="@+id/tv_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/report"
+            android:textSize="13sp"
+            android:textColor="@color/login_signup_gray_text_2"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/tv_bought_at_todays_home"
+            app:layout_constraintTop_toTopOf="@id/ratingBar_users_rating"
+            app:layout_constraintBottom_toBottomOf="@id/ratingBar_users_rating"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/line_bought_product"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        android:background="@color/gray_line_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_bought_product"
+        app:layout_constraintBottom_toBottomOf="@id/tv_bought_product"/>
+
+    <TextView
+        android:id="@+id/tv_bought_product"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="색상: 사계절용_차콜 / 구성 및 사이즈:슈퍼싱글 이불베개세트(SS이불+베개커버1P)"
+        android:textSize="13sp"
+        android:textColor="@color/gray_text_dark2"
+        android:layout_marginTop="@dimen/fragment_margin"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/line_bought_product"
+        app:layout_constraintTop_toBottomOf="@id/layout_users_profile"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_users_photo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/img_prod1_1"
+        app:riv_corner_radius="5dp"
+        android:layout_marginTop="@dimen/fragment_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_bought_product"/>
+
+    <TextView
+        android:id="@+id/tv_user_review_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="부들부들해서 좋아요 생각보다 따듯해요\n저보다 강아지가 좋아해요 사계절에 딱입니다."
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:layout_marginTop="@dimen/fragment_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_users_photo"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

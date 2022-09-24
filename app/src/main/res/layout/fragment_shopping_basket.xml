@@ -62,7 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_all_select"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/layout_purchase">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -325,7 +325,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:background="@color/white"
+        android:background="@color/buying_layout_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -334,47 +334,28 @@
             android:id="@+id/tv_btm_total_product_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text="0개"
             android:textSize="@dimen/shopping_basket_amount_text_size"
             android:textColor="@color/black"
             android:layout_marginStart="@dimen/fragment_margin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
-        <TextView
-            android:id="@+id/tv_num_str"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="개"
-            android:textSize="@dimen/shopping_basket_amount_text_size"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/tv_btm_total_product_number"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+
 
         <TextView
             android:id="@+id/tv_btm_total_product_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text="0원"
             android:textSize="@dimen/shopping_basket_amount_num_size"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginStart="3dp"
-            app:layout_constraintStart_toEndOf="@id/tv_num_str"
+            app:layout_constraintStart_toEndOf="@id/tv_btm_total_product_number"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
-        <TextView
-            android:id="@+id/tv_won_str"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/won"
-            android:textSize="@dimen/shopping_basket_amount_num_size"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/tv_btm_total_product_amount"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_purchase"
@@ -386,7 +367,7 @@
             android:textStyle="bold"
             android:background="@drawable/shape_blue_btn_enabled"
             android:layout_marginStart="@dimen/fragment_margin"
-            app:layout_constraintStart_toEndOf="@id/tv_won_str"
+            app:layout_constraintStart_toEndOf="@id/tv_btm_total_product_amount"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -117,12 +117,26 @@
     <string name="ad_title_of_first_photo">첫 사진 올리면 1,000 포인트를 드려요.</string>
     <string name="ad_subtitle_of_first_photo">지금 살고 있는 공간을 공유하고\n포인트를 받아 쇼핑도 즐겨 보세요!</string>
     <string name="product_information">상품정보</string>
-    <string name="review">리뷰</string>
-    <string name="inquiry">문의</string>
+    <string name="product_of_review">리뷰\n0</string>
+    <string name="product_of_inquiry">문의\n0</string>
     <string name="delivery_refund">배송/환불</string>
     <string name="recommendation">추천</string>
     <string name="special_price">특가</string>
-
+    <string name="immediate_discount">즉시할인가</string>
+    <string name="welcome_0.1_accumulate">적립 (WELCOME 0.1\% 적립)</string>
+    <string name="month">월</string>
+    <string name="months">개월</string>
+    <string name="interest_free_installment">무이자할부</string>
+    <string name="jeju_island_mountain_island">제주도\/도서산간</string>
+    <string name="differential_delivery_cost_by_region">지역별 차등배송비</string>
+    <string name="scheduled_to_arrive">도착 예정</string>
+    <string name="buying">구매하기</string>
+    <string name="review">리뷰</string>
+    <string name="inquiry">문의</string>
+    <string name="writing_review">리뷰쓰기</string>
+    <string name="report">신고</string>
+    <string name="see_more_review">리뷰 더보기</string>
+    <string name="delivery_exchange_refund">배송/교환/환불</string>
 
     <!-- 홈 프래그먼트 -->
     <string name="home_search">오늘의집 통합검색</string>

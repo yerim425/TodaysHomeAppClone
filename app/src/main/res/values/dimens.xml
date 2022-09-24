@@ -90,4 +90,7 @@
     <dimen name="fragemtn_store_category_rv_text">11sp</dimen>
     <dimen name="fragemtn_store_category_rv_icon">55dp</dimen>
 
+    <dimen name="product_detail_main_rv_title_text">18sp</dimen>
+    <dimen name="product_detail_tabbar_text">16sp</dimen>
+
 </resources>

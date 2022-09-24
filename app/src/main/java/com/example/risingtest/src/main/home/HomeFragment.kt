@@ -19,11 +19,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.ivStoreAppbarScrap.setOnClickListener {
+        binding.ivHomeAppbarScrap.setOnClickListener {
             startActivity(Intent(requireContext(), ScrapActivity::class.java))
         }
 
-        binding.ivStoreAppbarBasket.setOnClickListener {
+        binding.ivHomeAppbarBasket.setOnClickListener {
             startActivity(Intent(requireContext(), ShoppingBasketActivity::class.java))
         }
 

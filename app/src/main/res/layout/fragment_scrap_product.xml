@@ -109,7 +109,7 @@
             android:textColor="@color/gray_text_dark2"
             android:textSize="@dimen/scrap_fragment_bold_text_size"
             android:textStyle="bold"
-            android:background="@drawable/shape_gray_view_rounded"
+            android:background="@drawable/shape_gray1_view_rounded_3"
             android:paddingHorizontal="10dp"
             android:paddingVertical="5dp"
             android:drawableEnd="@drawable/ic_arrow_down_small"

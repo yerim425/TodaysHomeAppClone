@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_product"
     android:layout_width="wrap_content"
     android:layout_height="300dp"
     android:background="@color/white"
@@ -52,7 +53,7 @@
         android:textStyle="bold"
         android:paddingVertical="2dp"
         android:paddingHorizontal="5dp"
-        android:background="@drawable/shape_special_price_red_text"
+        android:background="@drawable/shape_red_view_rounded_3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -84,7 +85,7 @@
             android:text="AD"
             android:textColor="@color/gray_text_dark"
             android:textSize="10sp"
-            android:background="@drawable/shape_gray_edge_rounded"
+            android:background="@drawable/shape_gray_edge_rounded_3"
             android:paddingHorizontal="7dp"
             android:paddingVertical="1dp"
             android:layout_marginTop="3dp"
@@ -184,7 +185,7 @@
             android:paddingHorizontal="4dp"
             android:paddingVertical="2dp"
             android:layout_marginStart="2dp"
-            android:background="@drawable/shape_gray_view_rounded"
+            android:background="@drawable/shape_gray1_view_rounded_3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_prod_rating" />
 
@@ -201,7 +202,7 @@
             android:paddingHorizontal="4dp"
             android:paddingVertical="2dp"
             android:layout_marginStart="2dp"
-            android:background="@drawable/shape_special_price_red_text"
+            android:background="@drawable/shape_red_view_rounded_3"
             app:layout_constraintStart_toEndOf="@id/tv_prod_free_delivery"
             app:layout_constraintTop_toBottomOf="@id/tv_prod_rating" />
 

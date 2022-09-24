@@ -1,13 +1,16 @@
 package com.example.risingtest.src.main.store.storeMainRv.storeSecondRv
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.risingtest.R
+import com.example.risingtest.databinding.ActivityProductDetailBinding
 import com.example.risingtest.databinding.ItemRvProductBaseBinding
+import com.example.risingtest.src.main.store.productDetail.ProductDetailActivity
 
 class StoreProductRvGridAdapter(var prodList: MutableList<ProductItemData>, val context: Context)
     : RecyclerView.Adapter<StoreProductRvGridAdapter.ViewHolder>() {
@@ -20,7 +23,17 @@ class StoreProductRvGridAdapter(var prodList: MutableList<ProductItemData>, val 
                 .override(470, 470)
                 .apply(RequestOptions.centerCropTransform())
                 .into(binding.ivProdImg)
+
+
         }
+
+        init{
+            binding.layoutProduct.setOnClickListener {
+                context.startActivity(Intent(context, ProductDetailActivity::class.java))
+            }
+        }
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
