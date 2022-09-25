@@ -26,13 +26,21 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
     }
 
     private fun loginCheck(){
-        val loginStatus = sSharedPreferences.getString("loginStatus", "false")
+        /*val loginStatus = sSharedPreferences.getString("loginStatus", "false")
         if(loginStatus == "false"){
             sSharedPreferences.edit().putString("loginStatus", "false")
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }else{ //"true"
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }*/
+
+        if(sSharedPreferences.getString("X-ACCESS-TOKEN", null) != null){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }else{
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
     }

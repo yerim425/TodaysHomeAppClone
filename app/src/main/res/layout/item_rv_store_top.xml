@@ -11,8 +11,7 @@
         android:id="@+id/iv_item"
         android:layout_width="@dimen/fragment_store_top_rv_item_icon_size"
         android:layout_height="@dimen/fragment_store_top_rv_item_icon_size"
-        android:src="@drawable/ic_store_autumn_blanket"
-        android:padding="5dp"
+        android:src="@drawable/ic_store_food_market"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -21,29 +20,15 @@
         android:id="@+id/tv_item"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/store_rv_authmn_blanket"
+        android:text="@string/authmn_blanket"
         android:textSize="@dimen/fragment_store_top_rv_item_text_size"
         android:textColor="@color/black"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/iv_item"
         app:layout_constraintTop_toBottomOf="@id/iv_item"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/iv_item"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <TextView
-        android:id="@+id/tv_hot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/HOT"
-        android:textSize="13dp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:paddingHorizontal="7dp"
-        android:paddingVertical="2dp"
-        android:layout_marginTop="3dp"
-        android:visibility="visible"
-        android:background="@drawable/shape_red_view_rounded_10"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

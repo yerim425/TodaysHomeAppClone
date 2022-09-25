@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import com.example.risingtest.databinding.DialogLoadingBinding
 
@@ -19,6 +20,8 @@ class LoadingDialog(context: Context): Dialog(context) {
         setCancelable(false)
         window!!.setBackgroundDrawable(ColorDrawable())
         window!!.setDimAmount(0.2f)
+
+
     }
 
     override fun show() {

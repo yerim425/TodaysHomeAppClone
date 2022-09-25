@@ -83,6 +83,8 @@
     <dimen name="fragment_padding">15dp</dimen>
     <dimen name="fragment_margin">15dp</dimen>
     <!-- 1. 홈 프래그먼트 -->
+    <dimen name="fragment_home_top_rv_item_icon_size">60dp</dimen>
+    <dimen name="fragment_home_top_rv_item_text_size">12dp</dimen>
     <!-- 2. 스토어 프래그먼트 -->
     <dimen name="fragment_store_top_rv_item_icon_size">63dp</dimen>
     <dimen name="fragment_store_top_rv_item_text_size">12dp</dimen>

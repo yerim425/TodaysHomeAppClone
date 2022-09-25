@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:text="@string/reset_password"
         android:textSize="@dimen/email_login_reset_password_text_size"
-        android:textColor="@color/login_signup_gray_text_2"
+        android:textColor="@color/gray_text_dark"
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_login"

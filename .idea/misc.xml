@@ -36,6 +36,7 @@
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray2_view_rounded_5.xml" value="0.1615" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_edge.xml" value="0.146" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_edge_rounded.xml" value="0.1655" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_home_see_more_rounded.xml" value="0.1685" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_view_circle_rounded.xml" value="0.151" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_view_rounded.xml" value="0.1655" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_view_rounded2.xml" value="0.151" />
@@ -103,6 +104,9 @@
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_detail_rv_review_vertical.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_detail_rv_second.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_detail_rv_users_review.xml" value="0.264" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_rv_home_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_rv_home_popluar_post.xml" value="0.25364583333333335" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_rv_home_top.xml" value="0.72" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_rv_image.xml" value="0.25" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_rv_image_rounded.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_rv_product_base.xml" value="0.6" />

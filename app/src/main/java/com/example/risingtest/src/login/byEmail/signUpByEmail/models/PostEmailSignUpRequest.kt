@@ -1,4 +1,4 @@
-package com.example.risingtest.src.login.byEmail.models
+package com.example.risingtest.src.login.byEmail.signUpByEmail.models
 
 import com.google.gson.annotations.SerializedName
 
@@ -7,5 +7,5 @@ data class PostEmailSignUpRequest(
         @SerializedName("password") val password: String,
         @SerializedName("nickname") val nickname: String,
         @SerializedName("isMarketing") val isMarketing: String,
-        @SerializedName("isSMS") val isSMS: String,
+        @SerializedName("isReceive") val isReceive: String,
 )

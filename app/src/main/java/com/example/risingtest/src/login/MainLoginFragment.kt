@@ -32,10 +32,10 @@ class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
         binding.layoutLoginKakao.setOnClickListener { kakaoLogin() }
 
         binding.tvLoginToEmail.setOnClickListener {
-            parentFragmentManager.beginTransaction().add(R.id.frm_login, EmailLoginFragment()).commitAllowingStateLoss()
+            parentFragmentManager.beginTransaction().add(R.id.frm_login, EmailLoginFragment()).commit()
         }
         binding.tvSignUpToEmail.setOnClickListener {
-            parentFragmentManager.beginTransaction().add(R.id.frm_login, EmailSignUpFragment()).commitAllowingStateLoss()
+            parentFragmentManager.beginTransaction().add(R.id.frm_login, EmailSignUpFragment()).commit()
         }
 
     }
@@ -57,7 +57,7 @@ class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
                             "token: ${token.accessToken} \n\n " +
                             "me: ${user}")
 
-                    sSharedPreferences.edit().putString("loginStatus", "true").commit()
+                    //sSharedPreferences.edit().putString("loginStatus", "true").commit()
 
                     //val postRequest = PostKakaoLoginRequest(code = "${token.accessToken}")
                     //showLoadingDialog(requireContext())
@@ -85,7 +85,7 @@ class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
 
                     Log.d("loginActivity", "카카오계정으로 로그인 성공, token: ${token.accessToken}")
 
-                    sSharedPreferences.edit().putString("loginStatus", "true").commit()
+                    //sSharedPreferences.edit().putString("loginStatus", "true").commit()
 
                     //val postRequest = PostKakaoLoginRequest(code = "${token.accessToken}")
                     //showLoadingDialog(requireContext())
@@ -106,6 +106,15 @@ class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
     }
 
     override fun onPostKakaoLogInSuccess(response: KakaoLoginResponse) {
+
+        // result 값 sp에 저장
+        var jwt = response.result.jwt
+        var userIdx = response.result.userIdx.toString()
+        var editor = sSharedPreferences.edit()
+        editor.putString("X-ACCESS-TOKEN", jwt)
+        editor.putString("userIdx", userIdx)
+        editor.commit()
+
         dismissLoadingDialog()
         startActivity(Intent(requireContext(), MainActivity::class.java))
         requireActivity().finish()

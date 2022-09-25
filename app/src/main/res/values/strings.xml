@@ -31,11 +31,11 @@
     <string name="email_signup_email_authenticate">이메일 인증하기</string>
     <string name="email_signup_full_agreement_terms_and_conditions">약관 전체동의</string>
     <string name="email_signup_include_agree_selections">선택항목에 대한 동의 포함</string>
-    <string name="email_signup_over_age_14">만 14세 이상입니다. (필수)</string>
-    <string name="email_signup_terms_and_conditions">이용약관 (필수)</string>
-    <string name="email_signup_agree_collect_and_use">개인정보수집 및 이용동의 (필수)</string>
-    <string name="email_signup_agree_use_marketing">개인정보 마케팅 활용 동의 (선택)</string>
-    <string name="email_signup_receive_notification">이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신 (선택)</string>
+    <string name="email_signup_over_age_14">만 14세 이상입니다.</string>
+    <string name="email_signup_terms_and_conditions">이용약관</string>
+    <string name="email_signup_agree_collect_and_use">개인정보수집 및 이용동의</string>
+    <string name="email_signup_agree_use_marketing">개인정보 마케팅 활용 동의</string>
+    <string name="email_signup_receive_notification">이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신</string>
     <string name="email_signup_essential">(필수)</string>
     <string name="email_signup_choice">(선택)</string>
     <string name="email_signup_recommended_by_friend">친구에게 추천받고 오셨나요?(선택사항)</string>
@@ -44,7 +44,8 @@
     <string name="email_signup_complete">회원가입 완료</string>
     <string name="email_signup_warning_email_empty">이메일을 입력해주세요.</string>
     <string name="email_signup_warning_email_format_invalied">이메일 형식이 올바르지 않습니다.</string>
-    <string name="email_signup_warning_email_already_subsribed">이미 카카오톡 간펀가입으로 가입된 메일입니다. \'카카오톡 계속하기\'를 눌러 로그인해주세요</string>
+    <string name="email_signup_warning_email_already_subscribed_by_email">이미 가입한 이메일입니다. \'이메일로 로그인\'으로 로그인해주세요.</string>
+    <string name="email_signup_warning_email_already_subsribed_by_kakao">이미 카카오톡 간펀가입으로 가입된 메일입니다. \'카카오톡 계속하기\'를 눌러 로그인해주세요</string>
     <string name="email_signup_warning_password_format_invalied">비밀번호는 영문, 숫자를 포함하여 8자 이상이어야 합니다.</string>
     <string name="email_signup_warning_password_confirm_empty">확인을 위해 비밀번호를 한 번 더 입력해주세요.</string>
     <string name="email_signup_warning_password_confirm_mismatch">비밀번호가 일치하지 않습니다.</string>
@@ -147,7 +148,14 @@
     <string name="home_tabbar_know_how">노하우</string>
     <string name="home_tabbar_expert_housewarming">전문가집들이</string>
     <string name="home_tabbar_q_and_a">질문과답변</string>
-
+    <string name="shopping">쇼핑하기</string>
+    <string name="n_pyeong_house_warming">N평집들이</string>
+    <string name="pictures_by_space">공간별사진</string>
+    <string name="remodeling">리모델링</string>
+    <string name="easy_move">쉬운이사</string>
+    <string name="everyday_0won_deal">매일0원딜</string>
+    <string name="seazon_special_price">시즌특가</string>
+    <string name="see_more">더보기</string>
 
     <!-- 스토어 프래그먼트 -->
     <string name="store_search">스토어 검색</string>
@@ -161,17 +169,17 @@
     <string name="store_tabbar_quick_delivery">빠른배송</string>
     <string name="store_tabbar_premium">프리미엄</string>
     <string name="store_tabbar_exhibitions">기획전</string>
-    <!-- 스토어 탑 리사이클러뷰 -->
-    <string name="store_rv_authmn_blanket">가을이불</string>
-    <string name="store_rv_best">베스트</string>
-    <string name="store_rv_todays_deal">오늘의딜</string>
-    <string name="store_rv_oh_goods">오!굿즈</string>
-    <string name="store_rv_quick_delivery">빠른배송</string>
-    <string name="store_rv_premium">프리미엄</string>
-    <string name="store_rv_refurb_market">리퍼마켓</string>
-    <string name="store_rv_new_special_price">신상특가</string>
-    <string name="store_rv_food_market">푸드마켓</string>
-    <string name="store_rv_exhibitions">기획전</string>
+    
+    <string name="authmn_blanket">가을이불</string>
+    <string name="best">베스트</string>
+    <string name="todays_deal">오늘의딜</string>
+    <string name="oh_goods">오!굿즈</string>
+    <string name="quick_delivery">빠른배송</string>
+    <string name="premium">프리미엄</string>
+    <string name="refurb_market">리퍼마켓</string>
+    <string name="new_special_price">신상특가</string>
+    <string name="food_market">푸드마켓</string>
+    <string name="exhibitions">기획전</string>
     <string name="HOT">HOT</string>
     <!-- 스토어 메인 리사이클러뷰 -->
     <string name="store_rv_main_title_todays_deal">오늘의딜</string>

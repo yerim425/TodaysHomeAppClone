@@ -97,11 +97,11 @@
                     android:id="@+id/tv_warning_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
                     android:layout_marginTop="@dimen/email_signup_warning_margin_top"
                     android:text="@string/email_signup_warning_email_empty"
                     android:textColor="@color/email_signup_warning_text"
                     android:textSize="@dimen/email_signup_warning_text_size"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/edt_email" />
@@ -144,9 +144,9 @@
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:hint="@string/password"
+                    android:inputType="textPassword"
                     android:textColorHint="@color/login_signup_gray_text_3"
                     android:textSize="@dimen/email_login_signup_edt_size"
-                    android:inputType="textPassword"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -183,9 +183,9 @@
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:hint="@string/confirm_password"
+                    android:inputType="textPassword"
                     android:textColorHint="@color/login_signup_gray_text_3"
                     android:textSize="@dimen/email_login_signup_edt_size"
-                    android:inputType="textPassword"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -247,78 +247,79 @@
                     android:id="@+id/iv_remove_nickname"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:visibility="gone"
                     android:src="@drawable/ic_cancel_circle_fill"
-                    app:tint="@color/login_signup_gray_text_2"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:tint="@color/login_signup_gray_text_2" />
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_nicname_recommend"
+                    android:id="@+id/layout_nickname_recommend"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_warning_nickname"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintTop_toBottomOf="@id/tv_warning_nickname">
 
                     <View
                         android:id="@+id/line_signup_nickname"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/gray_line_2"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_nickname_recommend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="추천 별명"
-                        android:textSize="@dimen/email_signup_warning_text_size"
-                        android:textColor="@color/signup_blue_text"
-                        android:textStyle="bold"
                         android:layout_marginTop="15dp"
+                        android:text="추천 별명"
+                        android:textColor="@color/signup_blue_text"
+                        android:textSize="@dimen/email_signup_warning_text_size"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/line_signup_nickname"/>
+                        app:layout_constraintTop_toBottomOf="@id/line_signup_nickname" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/email_signup_recommend_nickname_line1"
-                        android:textSize="@dimen/email_signup_warning_text_size"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="15dp"
                         android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/email_signup_recommend_nickname_line1"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/email_signup_warning_text_size"
                         app:layout_constraintStart_toEndOf="@id/tv_nickname_recommend"
-                        app:layout_constraintTop_toBottomOf="@id/line_signup_nickname"/>
+                        app:layout_constraintTop_toBottomOf="@id/line_signup_nickname" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/email_signup_recommend_nickname_line2"
-                        android:textSize="@dimen/email_signup_warning_text_size"
-                        android:textColor="@color/black"
                         android:layout_marginTop="8dp"
+                        android:text="@string/email_signup_recommend_nickname_line2"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/email_signup_warning_text_size"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_nickname_recommend"/>
+                        app:layout_constraintTop_toBottomOf="@id/tv_nickname_recommend" />
 
                     <TextView
                         android:id="@+id/btn_recommended_nickname_use"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/email_signup_use"
-                        android:textSize="@dimen/email_signup_btn_text_size"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:paddingVertical="5dp"
-                        android:paddingHorizontal="8dp"
                         android:layout_marginTop="15dp"
                         android:background="@drawable/shape_blue_btn_enabled"
-                        app:layout_constraintTop_toBottomOf="@id/line_signup_nickname"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="5dp"
+                        android:text="@string/email_signup_use"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/email_signup_btn_text_size"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line_signup_nickname" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -383,15 +384,233 @@
                     app:layout_constraintTop_toBottomOf="@id/cb_full_agreement" />
 
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_terms_and_conditions"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:id="@+id/layout_over_age_14"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/fragment_margin"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/line_signup" />
+                    app:layout_constraintTop_toBottomOf="@id/line_signup">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cb_over_age_14"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/sel_signup_checkbox"
+                        android:button="@android:color/transparent"
+                        android:checked="false"/>
+
+                    <TextView
+                        android:id="@+id/tv_over_age_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/email_signup_over_age_14"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/email_signup_terms_and_condition_text_size"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email_signup_essential"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@id/layout_over_age_14"
+                    app:layout_constraintTop_toTopOf="@id/layout_over_age_14"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_over_age_14"/>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_terms_and_conditions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/fragment_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_over_age_14">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cb_terms_and_conditions"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/sel_signup_checkbox"
+                        android:button="@android:color/transparent"
+                        android:checked="false"/>
+
+                    <TextView
+                        android:id="@+id/tv_terms_and_conditions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/email_signup_terms_and_conditions"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/email_signup_terms_and_condition_text_size"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email_signup_essential"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@id/layout_terms_and_conditions"
+                    app:layout_constraintTop_toTopOf="@id/layout_terms_and_conditions"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_terms_and_conditions"/>
+                <ImageView
+                    android:id="@+id/iv_terms_and_condition_detail"
+                    android:layout_width="@dimen/email_signup_terms_and_conditions_right_arrow_size"
+                    android:layout_height="@dimen/email_signup_terms_and_conditions_right_arrow_size"
+                    android:src="@drawable/ic_arrow_right"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/layout_terms_and_conditions"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_terms_and_conditions"
+                    app:tint="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/layout_agree_collect_and_use"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/fragment_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_terms_and_conditions">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cb_agree_collect_and_use"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/sel_signup_checkbox"
+                        android:button="@android:color/transparent"
+                        android:checked="false"/>
+
+                    <TextView
+                        android:id="@+id/tv_agree_collect_and_use"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/email_signup_agree_collect_and_use"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/email_signup_terms_and_condition_text_size"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email_signup_essential"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@id/layout_agree_collect_and_use"
+                    app:layout_constraintTop_toTopOf="@id/layout_agree_collect_and_use"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_agree_collect_and_use"/>
+                <ImageView
+                    android:id="@+id/iv_agree_collect_and_use_detail"
+                    android:layout_width="@dimen/email_signup_terms_and_conditions_right_arrow_size"
+                    android:layout_height="@dimen/email_signup_terms_and_conditions_right_arrow_size"
+                    android:src="@drawable/ic_arrow_right"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/layout_agree_collect_and_use"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_agree_collect_and_use"
+                    app:tint="@color/black" />
+
+
+
+                <LinearLayout
+                    android:id="@+id/layout_agree_use_marketing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/fragment_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_agree_collect_and_use">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cb_agree_use_marketing"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/sel_signup_checkbox"
+                        android:button="@android:color/transparent"
+                        android:checked="false"/>
+
+                    <TextView
+                        android:id="@+id/tv_agree_use_marketing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/email_signup_agree_use_marketing"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/email_signup_terms_and_condition_text_size"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email_signup_choice"
+                    android:textColor="@color/login_signup_gray_text_1"
+                    android:textSize="12sp"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@id/layout_agree_use_marketing"
+                    app:layout_constraintTop_toTopOf="@id/layout_agree_use_marketing"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_agree_use_marketing"/>
+                <ImageView
+                    android:id="@+id/iv_agree_use_marketing_detail"
+                    android:layout_width="@dimen/email_signup_terms_and_conditions_right_arrow_size"
+                    android:layout_height="@dimen/email_signup_terms_and_conditions_right_arrow_size"
+                    android:src="@drawable/ic_arrow_right"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/layout_agree_use_marketing"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_agree_use_marketing"
+                    app:tint="@color/black" />
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_receive_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_agree_use_marketing">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cb_receive_notification"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/sel_signup_checkbox"
+                        android:button="@android:color/transparent"
+                        android:checked="false"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_receive_notification"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_choick_receive_notification"/>
+
+                    <TextView
+                        android:id="@+id/tv_receive_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/email_signup_receive_notification"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/email_signup_terms_and_condition_text_size"
+                        app:layout_constraintStart_toEndOf="@id/cb_receive_notification"/>
+                    <TextView
+                        android:id="@+id/tv_choick_receive_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email_signup_choice"
+                        android:textColor="@color/login_signup_gray_text_1"
+                        android:textSize="12sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_receive_notification"
+                        app:layout_constraintStart_toEndOf="@id/cb_receive_notification"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <TextView
                 android:id="@+id/tv_warning_terms_and_conditions"
@@ -428,8 +647,8 @@
                 android:layout_marginHorizontal="@dimen/email_login_signup_margin_horizontal"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/shape_gray_edge"
-                android:paddingVertical="5dp"
                 android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_recomended_my_friend">
@@ -440,9 +659,9 @@
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:hint="@string/email_signup_input_recommendation_code"
+                    android:paddingVertical="5dp"
                     android:textColorHint="@color/login_signup_gray_text_3"
                     android:textSize="@dimen/email_login_signup_edt_size"
-                    android:paddingVertical="5dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -451,15 +670,15 @@
                     android:id="@+id/btn_recommend_code_confirm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/check"
-                    android:textSize="@dimen/email_signup_btn_text_size"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:padding="8dp"
                     android:background="@drawable/shape_blue_btn_disabled"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:padding="8dp"
+                    android:text="@string/check"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/email_signup_btn_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -468,20 +687,19 @@
                 android:id="@+id/btn_signup_complete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:layout_marginHorizontal="@dimen/email_login_signup_margin_horizontal"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="100dp"
                 android:background="@drawable/shape_blue_btn_disabled"
+                android:paddingHorizontal="@dimen/email_login_signup_btn_padding"
                 android:text="@string/email_signup_complete"
-                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="@dimen/email_login_signup_btn_text_size"
-                android:paddingHorizontal="@dimen/email_login_signup_btn_padding"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layout_recommend_code"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_recommend_code" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

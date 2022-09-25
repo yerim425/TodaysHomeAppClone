@@ -1,6 +1,6 @@
 package com.example.risingtest.src.login.byEmail.loginByEmail
 
-import com.example.risingtest.src.login.byEmail.models.EmailLogInResponse
+import com.example.risingtest.src.login.byEmail.loginByEmail.models.EmailLogInResponse
 
 interface EmailLoginFragmentInterface {
 

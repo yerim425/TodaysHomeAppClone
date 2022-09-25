@@ -15,9 +15,6 @@ class StoreTopRvAdapter: RecyclerView.Adapter<StoreTopRvAdapter.ViewHolder>() {
             binding.ivItem.setImageResource(item.icon)
             binding.tvItem.setText(item.text)
 
-            if(item.hot){
-                binding.tvHot.visibility = View.VISIBLE
-            }else binding.tvHot.visibility = View.INVISIBLE
         }
 
     }

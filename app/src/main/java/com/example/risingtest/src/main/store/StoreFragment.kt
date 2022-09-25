@@ -98,16 +98,16 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::b
 
     fun setTopRvItemList(): MutableList<StoreTopRvItemData>{
         var list = mutableListOf<StoreTopRvItemData>()
-        list.add(StoreTopRvItemData(R.drawable.ic_store_autumn_blanket, R.string.store_rv_authmn_blanket, true))
-        list.add(StoreTopRvItemData(R.drawable.ic_store_best, R.string.store_rv_best, false))
-        list.add(StoreTopRvItemData(R.drawable.ic_store_todays_deal, R.string.store_rv_todays_deal, true))
-        list.add(StoreTopRvItemData(R.drawable.ic_store_oh_goods, R.string.store_rv_oh_goods, true))
-        list.add(StoreTopRvItemData(R.drawable.ic_store_quick_delivery, R.string.store_rv_quick_delivery, false))
-        list.add(StoreTopRvItemData(R.drawable.ic_store_premiun, R.string.store_rv_premium, false))
-        list.add(StoreTopRvItemData(R.drawable.ic_store_refurb_market, R.string.store_rv_refurb_market,false))
-        list.add(StoreTopRvItemData(R.drawable.ic_store_new_special_price, R.string.store_rv_new_special_price, false))
-        list.add(StoreTopRvItemData(R.drawable.ic_store_food_market, R.string.store_rv_food_market,true))
-        list.add(StoreTopRvItemData(R.drawable.ic_store_exhibitions, R.string.store_rv_exhibitions, false))
+        list.add(StoreTopRvItemData(R.drawable.ic_store_autumn_blanket, R.string.authmn_blanket))
+        list.add(StoreTopRvItemData(R.drawable.ic_store_best, R.string.best))
+        list.add(StoreTopRvItemData(R.drawable.ic_store_todays_deal, R.string.todays_deal))
+        list.add(StoreTopRvItemData(R.drawable.ic_store_oh_goods, R.string.oh_goods))
+        list.add(StoreTopRvItemData(R.drawable.ic_store_quick_delivery, R.string.quick_delivery))
+        list.add(StoreTopRvItemData(R.drawable.ic_store_premiun, R.string.premium))
+        list.add(StoreTopRvItemData(R.drawable.ic_store_refurb_market, R.string.refurb_market))
+        list.add(StoreTopRvItemData(R.drawable.ic_store_new_special_price, R.string.new_special_price))
+        list.add(StoreTopRvItemData(R.drawable.ic_store_food_market, R.string.food_market))
+        list.add(StoreTopRvItemData(R.drawable.ic_store_exhibitions, R.string.exhibitions))
         return list
     }
 

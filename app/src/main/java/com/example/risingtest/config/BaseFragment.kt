@@ -10,13 +10,16 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.example.risingtest.util.LoadingDialog
+import com.example.risingtest.util.LoadingTextDialog
 
 abstract class BaseFragment<B : ViewBinding>(
     private val bind: (View) -> B,
     @LayoutRes layoutResId: Int
 ) : Fragment(layoutResId) {
     private var _binding: B? = null
-    lateinit var mLoadingDialog: LoadingDialog
+
+    lateinit var loadingTextDialog: LoadingTextDialog
+    lateinit var lodingDialog: LoadingDialog
     protected val binding get() = _binding!!
 
     override fun onCreateView(
@@ -33,19 +36,31 @@ abstract class BaseFragment<B : ViewBinding>(
     }
 
     fun backFragment(){
-        requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+        requireActivity().supportFragmentManager.beginTransaction().remove(this).commitAllowingStateLoss()
     }
 
 
+    fun showTextLoadingDialog(context: Context, text: String ?= null) {
+        loadingTextDialog = LoadingTextDialog(context, text)
+        loadingTextDialog.show()
+    }
+
+    fun dismissTextLoadingDialog() {
+        if (loadingTextDialog.isShowing) {
+            loadingTextDialog.dismiss()
+        }
+    }
+
     fun showLoadingDialog(context: Context) {
-        mLoadingDialog = LoadingDialog(context)
-        mLoadingDialog.show()
+        lodingDialog = LoadingDialog(context)
+        lodingDialog.show()
     }
 
     fun dismissLoadingDialog() {
-        if (mLoadingDialog.isShowing) {
-            mLoadingDialog.dismiss()
+        if (lodingDialog.isShowing) {
+            lodingDialog.dismiss()
         }
     }
+
 
 }

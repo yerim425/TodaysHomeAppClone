@@ -23,7 +23,6 @@ import java.security.MessageDigest
 import java.security.Principal
 import kotlin.math.log
 
-lateinit var loginActivity: LoginActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
 
@@ -34,7 +33,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        loginActivity = this
 
         supportFragmentManager.beginTransaction().replace(R.id.frm_login, MainLoginFragment()).commit()
 

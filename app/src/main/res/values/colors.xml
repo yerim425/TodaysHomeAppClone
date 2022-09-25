@@ -20,6 +20,7 @@
 
     <color name="special_red">#FF7777</color>
 
+    <color name="dialog_bg">#33000000</color>
 
     <!-- 로그인 화면 -->
     <color name="login_kakao_bg">#FAE100</color>
@@ -58,6 +59,9 @@
     <color name="fragment_appbar_search_view_bg">#F3F3F3</color>
     <color name="fragment_appbar_search_hint_text">#AFAFAF</color>
     <color name="fragment_appbar_search_icon">#4C4C4C</color>
+
+    <!-- 홈 프래그먼트 -->
+    <color name="fragment_home_see_more_bg">#EAEBEF</color>
 
     <!-- 스토어 프래그먼트 -->
     <color name="fragment_store_category_rv_blue_bg">#F0FBFF</color>

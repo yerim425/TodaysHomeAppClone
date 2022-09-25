@@ -1,4 +1,4 @@
-package com.example.risingtest.src.login.byEmail.models
+package com.example.risingtest.src.login.byEmail.loginByEmail.models
 
 import com.google.gson.annotations.SerializedName
 
