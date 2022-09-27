@@ -19,6 +19,12 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".src.orderAndPay.orderResults.OrderResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".src.orderAndPay.OrderAndPayActivity"
+            android:exported="false" />
+        <activity
             android:name=".src.main.store.productDetail.ProductDetailActivity"
             android:exported="false" />
         <activity

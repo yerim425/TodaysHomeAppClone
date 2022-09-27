@@ -100,7 +100,10 @@ class EmailLoginFragment : BaseFragment<FragmentEmailLoginBinding>(
         editor.commit()
 
         dismissTextLoadingDialog()
-        startActivity(Intent(requireContext(), MainActivity::class.java))
+        var intent = Intent(requireContext(), MainActivity::class.java)
+        intent.putExtra("preActivity", "login")
+        requireActivity().startActivity(intent)
+        requireActivity().finish()
     }
 
     override fun onPostLogInFailure(message: String) {

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_product_option_selected"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/shape_shoppindg_basket_gray_view_rounded"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="10dp">
+
+    <TextView
+        android:id="@+id/tv_option_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text="컬러: 간절기차렵 클린코튼 고밀도이불(퓨어화이트) / 사이즈: SS기본세트(이불+베개커버1)"
+        android:textColor="@color/gray_text_dark3"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toStartOf="@id/iv_product_delete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_product_delete"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/ic_cancel_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_option_title"
+        app:layout_constraintTop_toTopOf="@id/tv_option_title"
+        app:tint="@color/gray_text_dark2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_product_num"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_gray_dark_edge_rounded_3"
+        android:paddingVertical="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_option_title">
+
+        <ImageView
+            android:id="@+id/iv_num_minus"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginHorizontal="7dp"
+            android:src="@drawable/ic_minus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/login_signup_gray_text_2" />
+
+        <TextView
+            android:id="@+id/tv_product_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_num_plus"
+            app:layout_constraintStart_toEndOf="@id/iv_num_minus"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_num_plus"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginHorizontal="7dp"
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/login_signup_gray_text_2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_product_option_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10,000원"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/layout_product_num"
+        app:layout_constraintBottom_toBottomOf="@id/layout_product_num"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

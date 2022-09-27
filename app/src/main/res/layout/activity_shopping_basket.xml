@@ -28,7 +28,7 @@
             android:id="@+id/tv_title_appabr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/shopping_basket"
+            android:text="@string/shopping_cart"
             android:textSize="@dimen/appbar_title_text_size"
             android:textColor="@color/black"
             android:textStyle="bold"

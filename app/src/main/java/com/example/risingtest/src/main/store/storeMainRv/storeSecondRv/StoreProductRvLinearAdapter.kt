@@ -28,7 +28,10 @@ class StoreProductRvLinearAdapter(var prodList: MutableList<ProductItemData>, va
 
         init{
             binding.layoutProduct.setOnClickListener {
-                context.startActivity(Intent(context, ProductDetailActivity::class.java))
+                val intent = Intent(context, ProductDetailActivity::class.java)
+                intent.putExtra("newActivity", R.drawable.anim_slide_in_right.toString())
+                intent.putExtra("preActivity", R.drawable.anim_slide_out_left.toString())
+                context.startActivity(intent)
             }
         }
     }

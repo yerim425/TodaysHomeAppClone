@@ -1,5 +1,6 @@
 package com.example.risingtest.src.shoppingBasket.shoppingBasketFragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,6 +8,7 @@ import com.example.risingtest.R
 import com.example.risingtest.config.BaseFragment
 import com.example.risingtest.databinding.FragmentShoppingBasketBinding
 import com.example.risingtest.src.main.store.storeMainRv.storeSecondRv.ProductItemData
+import com.example.risingtest.src.orderAndPay.OrderAndPayActivity
 import com.example.risingtest.src.shoppingBasket.shoppingBasketFragment.shoppingBasketOtherProduct.ShoppingBasketOtherProductAdapter
 import com.example.risingtest.src.shoppingBasket.shoppingBasketFragment.shoppingBasketProduct.ShoppingBasketProductAdapter
 import com.example.risingtest.src.shoppingBasket.shoppingBasketFragment.shoppingBasketProduct.ShoppingBasketProductItemData
@@ -30,6 +32,14 @@ class ShoppingBasketFragment : BaseFragment<FragmentShoppingBasketBinding>(
         shoppingBasketOtherProductAdapter.getListFromView(setShoppingBasketOtherProductList())
         binding.rvOtherProducts.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvOtherProducts.adapter = shoppingBasketOtherProductAdapter
+
+
+        binding.btnPurchase.setOnClickListener {
+            val intent = Intent(requireContext(), OrderAndPayActivity::class.java)
+            intent.putExtra("newActivity", R.drawable.anim_slide_in_right.toString())
+            intent.putExtra("preActivity", R.drawable.anim_slide_out_left.toString())
+            requireActivity().startActivity(intent)
+        }
     }
 
     fun setShoppingBasketProductList(): MutableList<ShoppingBasketProductItemData>{

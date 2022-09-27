@@ -67,6 +67,9 @@
     <dimen name="shopping_basket_payment_amount_text_size">16sp</dimen>
     <dimen name="shopping_basket_payment_amount_num_size">30dp</dimen>
 
+    <!-- 주문 결과 액티비티 -->
+    <dimen name="front_text_width">85dp</dimen>
+
     <!-- 메인 프래그먼트 앱바 -->
     <dimen name="fragment_appbar_icon_width">24dp</dimen>
     <dimen name="fragment_appbar_padding_vertical">8dp</dimen>

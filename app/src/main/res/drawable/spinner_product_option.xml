@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <padding
+                        android:left="@dimen/fragment_padding"
+                        android:right="@dimen/fragment_padding"
+                        android:top="10dp"
+                        android:bottom="10dp"/>
+
+                </shape>
+            </item>
+            <item
+                android:drawable="@drawable/ic_arrow_down_fill_small"
+                android:gravity="end"/>
+        </layer-list>
+    </item>
+
+</selector>

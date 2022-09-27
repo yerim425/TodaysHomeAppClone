@@ -37,7 +37,10 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
         }*/
 
         if(sSharedPreferences.getString("X-ACCESS-TOKEN", null) != null){
-            startActivity(Intent(this, MainActivity::class.java))
+            var intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("preActivity", "splash")
+            startActivity(intent)
+
             finish()
         }else{
             startActivity(Intent(this, LoginActivity::class.java))

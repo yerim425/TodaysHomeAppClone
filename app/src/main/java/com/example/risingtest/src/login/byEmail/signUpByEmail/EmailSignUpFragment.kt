@@ -1,6 +1,5 @@
 package com.example.risingtest.src.login.byEmail.signUpByEmail
 
-import android.annotation.SuppressLint
 import com.example.risingtest.config.ApplicationClass.Companion.sSharedPreferences
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +8,6 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.CheckBox
-import android.widget.LinearLayout
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.risingtest.R
 import com.example.risingtest.config.BaseFragment
 import com.example.risingtest.databinding.FragmentEmailSignUpBinding
@@ -18,8 +15,6 @@ import com.example.risingtest.src.login.LoginActivity
 import com.example.risingtest.src.login.byEmail.signUpByEmail.models.EmailSignUpResponse
 import com.example.risingtest.src.login.byEmail.signUpByEmail.models.PostEmailSignUpRequest
 import com.example.risingtest.src.login.byEmail.signUpByEmail.models.UserResponse
-import com.example.risingtest.src.login.byKakao.KakaoLoginService
-import com.example.risingtest.src.login.byKakao.models.PostKakaoLoginRequest
 import com.example.risingtest.src.main.MainActivity
 import java.util.*
 import java.util.regex.Pattern
@@ -110,7 +105,9 @@ class EmailSignUpFragment : BaseFragment<FragmentEmailSignUpBinding>(
         editor.putString("userIdx", userIdx)
         editor.commit()
 
-        requireActivity().startActivity(Intent(requireContext(), MainActivity::class.java))
+        var intent = Intent(requireContext(), MainActivity::class.java)
+        intent.putExtra("preActivity", "login")
+        requireActivity().startActivity(intent)
         requireActivity().finish()
     }
 
@@ -448,7 +445,7 @@ class EmailSignUpFragment : BaseFragment<FragmentEmailSignUpBinding>(
                 setEdgeColor(binding.tvWarningEmail, binding.layoutEmail, true)
 
                 binding.btnEmailAuthenticate.background =
-                    resources.getDrawable(R.drawable.shape_blue_edge_rounded)
+                    resources.getDrawable(R.drawable.shape_blue_edge_rounded_3)
                 binding.btnEmailAuthenticate.setTextColor(resources.getColor(R.color.colorAccent))
 
                 binding.btnEmailAuthenticate.setOnClickListener {

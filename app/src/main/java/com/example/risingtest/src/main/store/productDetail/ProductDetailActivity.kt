@@ -13,7 +13,10 @@ import com.example.risingtest.src.main.store.productDetail.adapters.ProductInfor
 import com.example.risingtest.src.main.store.productDetail.adapters.UsersStylingShotRvAdapter
 import com.example.risingtest.src.main.store.productDetail.adapters.productDetailRvMainAdapter.ProductDetailRvMainAdapter
 import com.example.risingtest.src.main.store.productDetail.adapters.productDetailRvMainAdapter.ProductDetailRvMainItemData
+import com.example.risingtest.src.main.store.productDetail.purchase.dialogs.ProductPurchaseDialog
 import com.example.risingtest.src.main.store.productDetail.review.ReviewInProductDetailFragment
+
+lateinit var productPurchaseDialog: ProductPurchaseDialog
 
 class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(ActivityProductDetailBinding::inflate) {
 
@@ -23,14 +26,18 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
     lateinit var productInformationRvAdapter: ProductInformationRvAdapter
     lateinit var productDetailRvMainAdapter: ProductDetailRvMainAdapter
 
-
+    var firstStart = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // 엑티비티 에니메이션
-        overridePendingTransition(R.drawable.anim_slide_in_right, R.drawable.anim_slide_out_left)
-
+        if(intent.hasExtra("newActivity")){
+            var newActivityAnim = intent.getStringExtra("newActivity")?.toInt()
+            var preActivityAnim = intent.getStringExtra("preActivity")?.toInt()
+            overridePendingTransition(newActivityAnim!!, preActivityAnim!!)
+        }
+        //overridePendingTransition(R.drawable.anim_slide_in_right, R.drawable.anim_slide_out_left)
 
         // 상단의 상품 카테고리
         productDetailCategoryAdapter = ProductDetailCategoryRvAdapter()
@@ -71,6 +78,12 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
         productDetailRvMainAdapter.getListFromView(setMainListData())
         binding.rvMain.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvMain.adapter = productDetailRvMainAdapter
+
+
+        binding.btnPurchase.setOnClickListener {
+            productPurchaseDialog = ProductPurchaseDialog(this)
+            productPurchaseDialog.show()
+        }
     }
 
 
@@ -115,5 +128,13 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
         list.add(ProductDetailRvMainItemData(getString(R.string.inquiry), true, 99))
         list.add(ProductDetailRvMainItemData(getString(R.string.delivery_exchange_refund), true))
         return list
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if(!firstStart){
+            overridePendingTransition(R.drawable.anim_slide_in_left, R.drawable.anim_slide_out_right)
+        }
+        firstStart = false
     }
 }

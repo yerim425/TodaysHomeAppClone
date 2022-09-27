@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/ic_add.xml" value="0.165" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/ic_add_white.xml" value="0.162" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/ic_minus.xml" value="0.162" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/ic_star_rating.xml" value="0.1225" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/sel_basket_edit_checkbox.xml" value="0.1655" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/sel_email_login_btn_active.xml" value="0.1735" />
@@ -20,36 +22,50 @@
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/sel_scrap_edit_checkbox.xml" value="0.1595" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/sel_signup_checkbox.xml" value="0.2" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_black_ellipse_rounded.xml" value="0.1415" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_blue2_edge_rounded_5.xml" value="0.132" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_blue_btn_disabled.xml" value="0.151" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_blue_btn_enabled.xml" value="0.151" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_blue_edge.xml" value="0.1655" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_blue_edge_round.xml" value="0.146" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_blue_edge_rounded.xml" value="0.1655" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_blue_edge_rounded_5.xml" value="0.162" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_blue_view_edge.xml" value="0.1475" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_edittext_gray_edge.xml" value="0.1735" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_edittext_gray_round.xml" value="0.1735" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_free_delivery_gray_text.xml" value="0.1225" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray1_view_rounded_10.xml" value="0.178" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray1_view_rounded_15.xml" value="0.151" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray1_view_rounded_3.xml" value="0.162" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray2_view_edge_rounded.xml" value="0.132" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray2_view_rounded_10.xml" value="0.178" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray2_view_rounded_15.xml" value="0.1615" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray2_view_rounded_3.xml" value="0.1615" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray2_view_rounded_5.xml" value="0.1615" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_dark_edge_rounded_3.xml" value="0.162" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_dark_edge_rounded_5.xml" value="0.1475" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_dark_view_rounded_3.xml" value="0.162" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_edge.xml" value="0.146" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_edge_rounded.xml" value="0.1655" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_edge_rounded_3.xml" value="0.162" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_home_see_more_rounded.xml" value="0.1685" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_view_circle_rounded.xml" value="0.151" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_view_edge.xml" value="0.1475" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_view_edge_rounded.xml" value="0.1475" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_view_rounded.xml" value="0.1655" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_gray_view_rounded2.xml" value="0.151" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_hot_red_text.xml" value="0.146" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_immediate_discount_pink_rounded.xml" value="0.151" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_login_facebook_btn_bg.xml" value="0.1735" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_login_kakao_view_round.xml" value="0.1735" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_login_kakao_view_rounded.xml" value="0.1475" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_login_signup_blue_btn_disabled.xml" value="0.2" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_login_signup_blue_btn_enabled.xml" value="0.2" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_login_signup_gray_btn_disabled.xml" value="0.2" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_pink_view_rounded.xml" value="0.1465" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_product_detail_viewpager_ellipse_rounded.xml" value="0.145" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_red_edge.xml" value="0.1505" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_red_view_rounded_10.xml" value="0.1475" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_red_view_rounded_3.xml" value="0.1475" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_review_progressbar.xml" value="0.2" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_scrap_selected.xml" value="0.166" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_scrap_simple_item_text_rounded.xml" value="0.1595" />
@@ -64,9 +80,14 @@
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_upload_benefit_text_round.xml" value="0.165" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_view_blue_edge_round.xml" value="0.146" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_white_view_rounded.xml" value="0.1525" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_white_view_rounded_5.xml" value="0.1475" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shape_white_view_top_rounded.xml" value="0.179" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/shapet_red_hot_text.xml" value="0.151" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/spinner_product_option.xml" value="0.162" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/activity_order_and_pay.xml" value="0.264" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/activity_order_result.xml" value="0.4" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/activity_product_detail.xml" value="0.264" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/activity_scrap.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/activity_shopping_basket.xml" value="0.25364583333333335" />
@@ -74,7 +95,13 @@
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/anim_slide_in_right.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/dialog_loading.xml" value="0.25364583333333335" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/dialog_loading_text.xml" value="0.20820863616930313" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/dialog_order_cancel.xml" value="0.264" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/dialog_product_option_detail.xml" value="0.20820863616930313" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/dialog_product_purchase.xml" value="0.264" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/dialog_put_in_shopping_cart.xml" value="0.20820863616930313" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/dialog_shopping_basket_number.xml" value="0.2526041666666667" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/dialog_warning_order_payment.xml" value="0.20820863616930313" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/fragment_all_scrap.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/fragment_email_login.xml" value="0.2390625" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/fragment_email_sign_up.xml" value="0.264" />
@@ -92,6 +119,7 @@
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/fragment_shopping_basket.xml" value="0.264" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/fragment_store.xml" value="0.264" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_home_view_pager.xml" value="0.25364583333333335" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_payment_means.xml" value="0.536" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_detail_category.xml" value="0.6" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_detail_rv_main.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_detail_rv_review.xml" value="0.2526041666666667" />
@@ -104,6 +132,9 @@
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_detail_rv_review_vertical.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_detail_rv_second.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_detail_rv_users_review.xml" value="0.264" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_option.xml" value="0.264" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_option_detail.xml" value="0.20820863616930313" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_product_option_selected.xml" value="0.264" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_rv_home_main.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_rv_home_popluar_post.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_rv_home_top.xml" value="0.72" />
@@ -127,6 +158,7 @@
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_viewpager_product_detail.xml" value="0.28802083333333334" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_viewpager_store.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/itme_rv_product_base.xml" value="0.6" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/toast_shopping_cart.xml" value="0.20820863616930313" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/menu/menu_main_btm_nav.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/menu/menu_scrap_toolbar.xml" value="0.25364583333333335" />
       </map>

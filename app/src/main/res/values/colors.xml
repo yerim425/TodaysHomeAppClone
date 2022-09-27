@@ -53,6 +53,11 @@
     <!-- 장바구니 - 담은 상품이 없을 경우 띄우는 프래그먼트 -->
     <color name="no_product_in_basket_bg">#F5F5F5</color>
     <color name="shopping_basket_view_line_color">#F3F3F3</color>
+    <color name="put_in_shopping_cart_toast_bg">#B5000000</color>
+
+    <!-- 주문/결제 액티비티 -->
+    <color name="line_order_payment">#EAEBEF</color>
+    <color name="point_full_use_btn_disabled">#A1A3E4F8</color>
 
     <!-- 메인 화면 프래그먼트 -->
     <!-- 메인 앱바 -->

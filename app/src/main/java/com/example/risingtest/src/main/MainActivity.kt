@@ -22,7 +22,7 @@ lateinit var myPageFragment: MyPageFragment
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     lateinit var uploadTypeAdapter: UploadTypeAdapter
-
+    var firstStart = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -104,7 +104,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     override fun onResume() {
         super.onResume()
-        // 메뉴 엑티비티 에니메이션
-        overridePendingTransition(R.drawable.anim_slide_in_left, R.drawable.anim_slide_out_right)
+        if(!firstStart)
+            overridePendingTransition(R.drawable.anim_slide_in_left, R.drawable.anim_slide_out_right)
+
+        firstStart = false
     }
 }

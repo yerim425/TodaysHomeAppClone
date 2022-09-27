@@ -364,7 +364,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/img_today_departure_white"
+                    android:src="@drawable/img_today_departure"
                     app:layout_constraintBottom_toBottomOf="@id/tv_product_amount"
                     app:layout_constraintStart_toEndOf="@id/tv_immediate_discount"
                     app:layout_constraintTop_toTopOf="@id/tv_product_amount" />
@@ -800,7 +800,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/fragment_margin"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/shape_blue_edge_rounded"
+                    android:background="@drawable/shape_blue_edge_rounded_3"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingVertical="10dp"

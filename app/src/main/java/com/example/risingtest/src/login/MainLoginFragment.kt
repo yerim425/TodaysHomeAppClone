@@ -64,7 +64,9 @@ class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
                     //KakaoLoginService(this).tryPostKakaoLogin(postRequest)
 
                     // 서버 연동 구현하면 제거하기
-                    startActivity(Intent(requireContext(), MainActivity::class.java))
+                    var intent = Intent(requireContext(), MainActivity::class.java)
+                    intent.putExtra("preActivity", "login")
+                    requireActivity().startActivity(intent)
                     requireActivity().finish()
                 }
             }
@@ -92,7 +94,9 @@ class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
                     //KakaoLoginService(this).tryPostKakaoLogin(postRequest)
 
                     // 서버 연동 구현하면 제거하기
-                    startActivity(Intent(requireContext(), MainActivity::class.java))
+                    var intent = Intent(requireContext(), MainActivity::class.java)
+                    intent.putExtra("preActivity", "login")
+                    requireActivity().startActivity(intent)
                     requireActivity().finish()
                 }
             }
@@ -116,7 +120,9 @@ class MainLoginFragment : BaseFragment<FragmentMainLoginBinding>(
         editor.commit()
 
         dismissLoadingDialog()
-        startActivity(Intent(requireContext(), MainActivity::class.java))
+        var intent = Intent(requireContext(), MainActivity::class.java)
+        intent.putExtra("preActivity", "login")
+        requireActivity().startActivity(intent)
         requireActivity().finish()
     }
 
