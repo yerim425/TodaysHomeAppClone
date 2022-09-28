@@ -11,7 +11,7 @@
     <dimen name="login_to_problem">13sp</dimen>
     <dimen name="search_non_menber_order">13sp</dimen>
 
-    <!-- 이메일 로그인, 가입 프래그먼트 -->
+    <!-- 이메일 로그인,가입 프래그먼트 -->
     <dimen name="email_login_signup_title_size">18sp</dimen>
     <dimen name="email_login_signup_title_margin">15dp</dimen>
     <dimen name="email_login_signup_back_btn_size">26dp</dimen>
