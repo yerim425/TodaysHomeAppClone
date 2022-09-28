@@ -6,7 +6,7 @@ data class Review(
     val reviewId: Long,
     val writerIdx: Long,
     val nickname: String,
-    val score: Double,
+    val score: Float,
     val reviewPhotos: List<String>,
     val text: String,
     val createdAt: Date
