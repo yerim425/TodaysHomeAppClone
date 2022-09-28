@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import com.example.risingtest.config.ApplicationClass.Companion.sSharedPreferences
 import com.example.risingtest.config.BaseActivity
 import com.example.risingtest.databinding.ActivitySplashBinding
@@ -26,19 +27,13 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
     }
 
     private fun loginCheck(){
-        /*val loginStatus = sSharedPreferences.getString("loginStatus", "false")
-        if(loginStatus == "false"){
-            sSharedPreferences.edit().putString("loginStatus", "false")
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
-        }else{ //"true"
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
-        }*/
 
         if(sSharedPreferences.getString("X-ACCESS-TOKEN", null) != null){
+
+
+            Log.d("splashActivity", sSharedPreferences.getString("X-ACCESS-TOKEN", null)!!)
+
             var intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("preActivity", "splash")
             startActivity(intent)
 
             finish()

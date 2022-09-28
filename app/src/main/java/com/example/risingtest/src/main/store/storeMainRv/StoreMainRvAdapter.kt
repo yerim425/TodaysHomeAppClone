@@ -8,16 +8,17 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.risingtest.databinding.ItemRvStoreMainBinding
-import com.example.risingtest.src.main.store.storeMainRv.storeSecondRv.StoreProductRvGridAdapter
-import com.example.risingtest.src.main.store.storeMainRv.storeSecondRv.StoreProductRvLinearAdapter
+import com.example.risingtest.src.main.store.StoreFragment
+import com.example.risingtest.src.main.store.storeMainRv.storeProductRv.StoreProductRvGridAdapter
+import com.example.risingtest.src.main.store.storeMainRv.storeProductRv.StoreProductRvLinearAdapter
 
-class StoreMainRvAdapter(val context: Context): RecyclerView.Adapter<StoreMainRvAdapter.ViewHolder>() {
+class StoreMainRvAdapter(val context: Context, val fragment: StoreFragment, val userIdx: Int): RecyclerView.Adapter<StoreMainRvAdapter.ViewHolder>() {
 
     var list = mutableListOf<StoreMainRvItemData>()
 
     inner class ViewHolder(val binding: ItemRvStoreMainBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(item: StoreMainRvItemData){
-            binding.tvTitle.setText(item.title)
+            binding.tvTitle.text = item.title
             if(item.showSeeMoreView){
                 binding.tvSeeMore.visibility = View.VISIBLE
             }else binding.tvSeeMore.visibility = View.INVISIBLE
@@ -25,10 +26,10 @@ class StoreMainRvAdapter(val context: Context): RecyclerView.Adapter<StoreMainRv
 
             if(item.viewType == "LH"){ // LinearLayout  Horizontal
                 binding.rvStoreProduct.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-                binding.rvStoreProduct.adapter = item.produceList?.let { StoreProductRvLinearAdapter(it, context) }
+                binding.rvStoreProduct.adapter = item.produceList?.let { StoreProductRvLinearAdapter(it, context, fragment, userIdx) }
             }else{ // GridLayout
                 binding.rvStoreProduct.layoutManager = GridLayoutManager(context, 2)
-                binding.rvStoreProduct.adapter = item.produceList?.let {StoreProductRvGridAdapter(it, context) }
+                binding.rvStoreProduct.adapter = item.produceList?.let {StoreProductRvGridAdapter(it, context, fragment, userIdx) }
             }
 
         }
@@ -48,5 +49,6 @@ class StoreMainRvAdapter(val context: Context): RecyclerView.Adapter<StoreMainRv
 
     fun getListFromView(nList: MutableList<StoreMainRvItemData>){
         list = nList
+        notifyDataSetChanged()
     }
 }

@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/iv_prod_remain_time"
+        android:id="@+id/tv_prod_remain_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
@@ -53,6 +53,7 @@
         android:textStyle="bold"
         android:paddingVertical="2dp"
         android:paddingHorizontal="5dp"
+        android:visibility="gone"
         android:background="@drawable/shape_red_view_rounded_3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -85,6 +86,7 @@
             android:text="AD"
             android:textColor="@color/gray_text_dark"
             android:textSize="10sp"
+            android:visibility="invisible"
             android:background="@drawable/shape_gray_edge_rounded_3"
             android:paddingHorizontal="7dp"
             android:paddingVertical="1dp"
@@ -99,8 +101,7 @@
             android:text="[단하루!20%쿠폰+사은품]부드러운 카스테라 옥수수솜 사계절/가을 차렵이불시트"
             android:textSize="13sp"
             android:textColor="@color/black"
-            android:paddingHorizontal="3dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:paddingBottom="5dp"
             android:maxLines="2"
             android:ellipsize="end"
@@ -116,7 +117,6 @@
             android:textSize="18sp"
             android:textColor="@color/colorAccent"
             android:textStyle="bold"
-            android:layout_marginStart="3dp"
             app:layout_constraintTop_toBottomOf="@id/tv_prod_title"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -139,12 +139,13 @@
             android:text="4.7"
             android:textSize="12sp"
             android:textColor="@color/black"
+            android:textStyle="bold"
             android:drawableStart="@drawable/ic_star_rating"
             android:drawableTint="@color/colorAccent"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_prod_sale_percentage"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_prod_price"/>
 
         <TextView
             android:id="@+id/tv_prod_review"
@@ -154,10 +155,10 @@
             android:textSize="12sp"
             android:textColor="@color/gray_text_dark"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/tv_prod_rating"
-            app:layout_constraintTop_toBottomOf="@id/tv_prod_sale_percentage"/>
+            app:layout_constraintTop_toTopOf="@id/tv_prod_rating"
+            app:layout_constraintBottom_toBottomOf="@id/tv_prod_rating"/>
 
         <TextView
             android:id="@+id/tv_prod_review_num"
@@ -167,10 +168,10 @@
             android:textSize="12sp"
             android:textColor="@color/gray_text_dark"
             android:layout_marginStart="3dp"
-            android:layout_marginTop="5dp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/tv_prod_review"
-            app:layout_constraintTop_toBottomOf="@id/tv_prod_sale_percentage"
+            app:layout_constraintTop_toTopOf="@id/tv_prod_rating"
+            app:layout_constraintBottom_toBottomOf="@id/tv_prod_rating"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
@@ -198,13 +199,13 @@
             android:textSize="9sp"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_marginTop="5dp"
             android:paddingHorizontal="4dp"
             android:paddingVertical="2dp"
             android:layout_marginStart="2dp"
             android:background="@drawable/shape_red_view_rounded_3"
             app:layout_constraintStart_toEndOf="@id/tv_prod_free_delivery"
-            app:layout_constraintTop_toBottomOf="@id/tv_prod_rating" />
+            app:layout_constraintTop_toTopOf="@id/tv_prod_free_delivery"
+            app:layout_constraintBottom_toBottomOf="@id/tv_prod_free_delivery"/>
 
 
 

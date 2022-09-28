@@ -84,6 +84,9 @@
     <string name="scrap_folder_move">폴더이동</string>
     <string name="cancellation">취소</string>
     <string name="deletion">삭제</string>
+    <string name="scraped_it">스크랩했습니다.</string>
+    <string name="see_scrapbook">스크랩북 보기</string>
+    <string name="put_in_folder">폴더에 담기</string>
 
     <!-- 장바구니 액티비티 -->
     <string name="shopping_cart">장바구니</string>

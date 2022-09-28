@@ -12,4 +12,6 @@ interface EmailSignUpFragmentInterface {
     // 모든 유저 조회 요청 콜백
     fun onGetUserSuccess(response: UserResponse)
     fun onGetUserFailure(message: String)
+
+
 }

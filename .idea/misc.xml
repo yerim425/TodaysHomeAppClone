@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/anim_product_scrap_bottom_in.xml" value="0.136" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/ic_add.xml" value="0.165" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/ic_add_white.xml" value="0.162" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/drawable/ic_minus.xml" value="0.162" />
@@ -159,6 +160,9 @@
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_viewpager_product_detail.xml" value="0.28802083333333334" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/item_viewpager_store.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/itme_rv_product_base.xml" value="0.6" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/popupwindow_product_scrap.xml" value="0.20820863616930313" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/snackbar_product_scrap.xml" value="0.20735356990166737" />
+        <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/toast_scrap.xml" value="0.264" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/layout/toast_shopping_cart.xml" value="0.20820863616930313" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/menu/menu_main_btm_nav.xml" value="0.25364583333333335" />
         <entry key="..\:/risingCamp/RisingTest/app/src/main/res/menu/menu_scrap_toolbar.xml" value="0.25364583333333335" />

@@ -3,11 +3,14 @@ package com.example.risingtest.src.main
 import android.animation.ObjectAnimator
 import android.graphics.Paint
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.example.risingtest.R
+import com.example.risingtest.config.ApplicationClass.Companion.sSharedPreferences
 import com.example.risingtest.config.BaseActivity
 import com.example.risingtest.databinding.ActivityMainBinding
 import com.example.risingtest.src.main.home.HomeFragment
+import com.example.risingtest.src.main.models.MyProfileResponse
 import com.example.risingtest.src.main.moveConstructRepair.MoveConstructRepairFragment
 import com.example.risingtest.src.main.myPage.MyPageFragment
 import com.example.risingtest.src.main.store.StoreFragment
@@ -19,12 +22,16 @@ lateinit var shoppingFragment: StoreFragment
 lateinit var moveConstructRepairFragment: MoveConstructRepairFragment
 lateinit var myPageFragment: MyPageFragment
 
-class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate), MainActivityInterface {
 
     lateinit var uploadTypeAdapter: UploadTypeAdapter
     var firstStart = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        var userIdx = sSharedPreferences.getString("userIdx", null)?.toInt()
+        Log.d("MainActivity", userIdx.toString())
+        MainService(this).tryGetMyProfile(userIdx!!)
 
         supportFragmentManager.beginTransaction().replace(R.id.frm_main, HomeFragment()).commitAllowingStateLoss()
         binding.btmNavMain.setOnItemSelectedListener {
@@ -108,5 +115,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             overridePendingTransition(R.drawable.anim_slide_in_left, R.drawable.anim_slide_out_right)
 
         firstStart = false
+    }
+
+    override fun onGetMyProfileSuccess(response: MyProfileResponse) {
+        var editor = sSharedPreferences.edit()
+        //editor.putString("userNickName", response.result.nickname)
+        //editor.commit()
+    }
+
+    override fun onGetMyProfileFailure(message: String) {
+        showCustomToast("MainActivity: getMyProfile 실패")
     }
 }

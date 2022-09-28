@@ -3,9 +3,12 @@ package com.example.risingtest.src.main.store
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.example.risingtest.R
 import com.example.risingtest.databinding.ItemViewpagerBaseBinding
 
-class StoreViewPagerAdapter(): RecyclerView.Adapter<StoreViewPagerAdapter.ViewHolder>() {
+class StoreViewPagerAdapter: RecyclerView.Adapter<StoreViewPagerAdapter.ViewHolder>() {
     var pageList = mutableListOf<Int>()
 
     inner class ViewHolder(val binding: ItemViewpagerBaseBinding): RecyclerView.ViewHolder(binding.root){
@@ -20,6 +23,7 @@ class StoreViewPagerAdapter(): RecyclerView.Adapter<StoreViewPagerAdapter.ViewHo
 
     override fun onBindViewHolder(holder: StoreViewPagerAdapter.ViewHolder, position: Int) {
         holder.bind(pageList[position%pageList.size])
+
     }
 
     override fun getItemCount(): Int {

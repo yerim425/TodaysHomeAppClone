@@ -1,11 +1,9 @@
 package com.example.risingtest.src.scrap.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -13,9 +11,7 @@ import com.example.risingtest.R
 import com.example.risingtest.config.BaseFragment
 import com.example.risingtest.databinding.FragmentScrapProductBinding
 import com.example.risingtest.databinding.ItemRvProductBaseBinding
-import com.example.risingtest.databinding.ItemScrapProductSimpleBinding
-import com.example.risingtest.src.main.store.storeMainRv.storeSecondRv.ProductItemData
-import com.example.risingtest.src.scrap.datas.ScrapAllItemData
+import com.example.risingtest.src.main.store.storeMainRv.storeProductRv.StoreProductItemData
 
 
 class ScrapProductFragment : BaseFragment<FragmentScrapProductBinding>(
@@ -47,29 +43,29 @@ class ScrapProductFragment : BaseFragment<FragmentScrapProductBinding>(
 
         }
 
-        productScrapRvAdapter = ProductScrapAdapter()
-        productScrapRvAdapter.getListFromView(setList())
-        binding.rvScrap.layoutManager = GridLayoutManager(context, 2)
-        binding.rvScrap.adapter = productScrapRvAdapter
+        //productScrapRvAdapter = ProductScrapAdapter()
+        //productScrapRvAdapter.getListFromView(setList())
+        //binding.rvScrap.layoutManager = GridLayoutManager(context, 2)
+        //binding.rvScrap.adapter = productScrapRvAdapter
 
     }
 
 
-    fun setList(): MutableList<ProductItemData>{
+    fun setList(): MutableList<StoreProductItemData>{
 
-        var list = mutableListOf<ProductItemData>()
+        var list = mutableListOf<StoreProductItemData>()
         for(i in 0 until 10){
-            list.add(ProductItemData())
+            //list.add(StoreProductItemData())
         }
         return list
     }
 
     inner class ProductScrapAdapter: RecyclerView.Adapter<ProductScrapAdapter.ViewHolder>(){
 
-        var list = mutableListOf<ProductItemData>()
+        var list = mutableListOf<StoreProductItemData>()
 
         inner class ViewHolder(val binding: ItemRvProductBaseBinding): RecyclerView.ViewHolder(binding.root){
-            fun bind(item: ProductItemData){
+            fun bind(item: StoreProductItemData){
 
 
                 Glide.with(binding.ivProdImg)
@@ -99,7 +95,7 @@ class ScrapProductFragment : BaseFragment<FragmentScrapProductBinding>(
             return list.size
         }
 
-        fun getListFromView(nList: MutableList<ProductItemData>){
+        fun getListFromView(nList: MutableList<StoreProductItemData>){
             list = nList
         }
 

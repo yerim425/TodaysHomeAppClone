@@ -13,12 +13,14 @@ import com.example.risingtest.src.main.store.productDetail.adapters.ProductInfor
 import com.example.risingtest.src.main.store.productDetail.adapters.UsersStylingShotRvAdapter
 import com.example.risingtest.src.main.store.productDetail.adapters.productDetailRvMainAdapter.ProductDetailRvMainAdapter
 import com.example.risingtest.src.main.store.productDetail.adapters.productDetailRvMainAdapter.ProductDetailRvMainItemData
+import com.example.risingtest.src.main.store.productDetail.models.ProductDetailResponse
 import com.example.risingtest.src.main.store.productDetail.purchase.dialogs.ProductPurchaseDialog
 import com.example.risingtest.src.main.store.productDetail.review.ReviewInProductDetailFragment
 
 lateinit var productPurchaseDialog: ProductPurchaseDialog
 
-class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(ActivityProductDetailBinding::inflate) {
+class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(ActivityProductDetailBinding::inflate)
+    , ProductDetailActivityInterface{
 
     lateinit var productDetailCategoryAdapter: ProductDetailCategoryRvAdapter
     lateinit var usersStylingShotAdapter: UsersStylingShotRvAdapter
@@ -136,5 +138,13 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
             overridePendingTransition(R.drawable.anim_slide_in_left, R.drawable.anim_slide_out_right)
         }
         firstStart = false
+    }
+
+    override fun onGetProductDetailSuccess(response: ProductDetailResponse) {
+
+    }
+
+    override fun onGetProductDetailFailure(message: String) {
+        showCustomToast("상품 상세 화면 요청 실패")
     }
 }

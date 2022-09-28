@@ -93,6 +93,8 @@ class EmailSignUpFragment : BaseFragment<FragmentEmailSignUpBinding>(
         showCustomToast("모든 유저 조회 실패")
     }
 
+
+
     // 회원 가입 요청
     override fun onPostSignUpSuccess(response: EmailSignUpResponse) {
         dismissTextLoadingDialog()
@@ -100,9 +102,11 @@ class EmailSignUpFragment : BaseFragment<FragmentEmailSignUpBinding>(
         // result 값 sp에 저장
         var jwt = response.result.jwt
         var userIdx = response.result.userIdx.toString()
+        var userNickname = binding.edtNickname.text.toString()
         var editor = sSharedPreferences.edit()
         editor.putString("X-ACCESS-TOKEN", jwt)
         editor.putString("userIdx", userIdx)
+        editor.putString("userNickName", userNickname)
         editor.commit()
 
         var intent = Intent(requireContext(), MainActivity::class.java)

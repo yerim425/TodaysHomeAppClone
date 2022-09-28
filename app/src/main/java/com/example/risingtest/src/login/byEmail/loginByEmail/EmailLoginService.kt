@@ -33,4 +33,5 @@ class EmailLoginService(val emailLoginFragmentInterface: EmailLoginFragmentInter
             }
         })
     }
+
 }
