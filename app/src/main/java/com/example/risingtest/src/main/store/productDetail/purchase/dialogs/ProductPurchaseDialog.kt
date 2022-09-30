@@ -74,6 +74,7 @@ class ProductPurchaseDialog(context: Context, val productDetail: ResultProductDe
             }else{
                 dismiss()
 
+                productTotalPrice = 0
                 // 다른 유저가 함께 구매한 상품이 없으면
                 ShoppingCartToast.createToast(context)?.show()
 
