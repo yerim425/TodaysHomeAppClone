@@ -2,7 +2,7 @@ package com.example.risingtest.src.main
 
 import android.util.Log
 import com.example.risingtest.config.ApplicationClass
-import com.example.risingtest.src.main.models.MyProfileResponse
+import com.example.risingtest.src.main.models.myprofile.MyProfileResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

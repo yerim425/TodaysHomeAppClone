@@ -18,15 +18,17 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.risingtest.R
 import com.example.risingtest.databinding.DialogProductPurchaseBinding
-import com.example.risingtest.databinding.ToastShoppingCartBinding
+import com.example.risingtest.src.main.store.productDetail.models.productDetail.ResultProductDetail
 import com.example.risingtest.src.main.store.productDetail.purchase.adapters.ProductOptionAdapter
 import com.example.risingtest.src.main.store.productDetail.purchase.adapters.ProductOptionSelectedAdapter
-import com.example.risingtest.src.main.store.productDetail.purchase.datas.ProductOptionDetailItemData
 import com.example.risingtest.src.main.store.productDetail.purchase.datas.ProductOptionItemData
 import com.example.risingtest.src.orderAndPay.OrderAndPayActivity
 import com.example.risingtest.src.shoppingBasket.ShoppingBasketActivity
+import java.text.DecimalFormat
 
-class ProductPurchaseDialog(context: Context, var text: String?= null): Dialog(context) {
+var productTotalPrice = 0
+
+class ProductPurchaseDialog(context: Context, val productDetail: ResultProductDetail): Dialog(context) {
     private lateinit var binding: DialogProductPurchaseBinding
 
     lateinit var productOptionAdapter: ProductOptionAdapter
@@ -53,16 +55,18 @@ class ProductPurchaseDialog(context: Context, var text: String?= null): Dialog(c
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
 
-
+        // 옵션 리사이클러뷰
         productOptionAdapter = ProductOptionAdapter(context)
         productOptionAdapter.getListFromView(setOptionList())
         binding.rvProductOption.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.rvProductOption.adapter = productOptionAdapter
 
-        productOptionSelectedAdapter = ProductOptionSelectedAdapter()
+        // 선택한 옵션 리사이클러뷰
+        productOptionSelectedAdapter = ProductOptionSelectedAdapter(this, productDetail.price-productDetail.discountedPrice)
         binding.rvProductSelected.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.rvProductSelected.adapter = productOptionSelectedAdapter
 
+        binding.orderPrice.text = "0원"
 
         binding.btnShoppingBasket.setOnClickListener {
             if(productOptionSelectedAdapter.itemCount == 0){
@@ -87,6 +91,16 @@ class ProductPurchaseDialog(context: Context, var text: String?= null): Dialog(c
                 val intent = Intent(context, OrderAndPayActivity::class.java)
                 intent.putExtra("newActivity", R.drawable.anim_slide_in_right.toString())
                 intent.putExtra("preActivity", R.drawable.anim_slide_out_left.toString())
+                intent.putExtra("isProductDetail", "true")
+                intent.putExtra("brandName", productDetail.brandName)
+                intent.putExtra("imageUrl", productDetail.productPhotos[0])
+                intent.putExtra("productName", productDetail.productName)
+                intent.putExtra("optionName", productOptionSelectedAdapter.getOptionName())
+                intent.putExtra("optionId", productOptionSelectedAdapter.getOptionId())
+                intent.putExtra("price", productTotalPrice)
+                intent.putExtra("productNum", productOptionSelectedAdapter.getProductNum())
+                intent.putExtra("productId", productOptionSelectedAdapter.getProductId())
+
                 context.startActivity(intent)
 
             }
@@ -98,21 +112,28 @@ class ProductPurchaseDialog(context: Context, var text: String?= null): Dialog(c
         if(!this.isShowing) super.show()
     }
 
+    override fun onBackPressed() {
+        productTotalPrice = 0
+        dismiss()
+    }
+
 
     fun setOptionList(): MutableList<ProductOptionItemData>{
         var mainList = mutableListOf<ProductOptionItemData>()
 
-        var secondList1 = arrayListOf<ProductOptionDetailItemData>()
-        secondList1.add(ProductOptionDetailItemData("화이트", "10,000원"))
-        secondList1.add(ProductOptionDetailItemData("블랙", "10,000원"))
-        secondList1.add(ProductOptionDetailItemData("블루", "10,000원"))
-        secondList1.add(ProductOptionDetailItemData("레드", "10,000원"))
-        secondList1.add(ProductOptionDetailItemData("그레이", "10,000원"))
-        secondList1.add(ProductOptionDetailItemData("옐로우", "10,000원"))
-        secondList1.add(ProductOptionDetailItemData("그린", "10,000원"))
-        mainList.add(ProductOptionItemData("선택", secondList1))
+        mainList.add(ProductOptionItemData(
+            "선택", (productDetail.price-productDetail.discountedPrice), productDetail.options))
 
         return mainList
+    }
+
+    fun setProductTotalPrice(price: Int){
+        binding.orderPrice.text = getDecimalFormat(price) + "원"
+    }
+
+    fun getDecimalFormat(number: Int): String {
+        val deciaml = DecimalFormat("#,###")
+        return deciaml.format(number)
     }
 }
 

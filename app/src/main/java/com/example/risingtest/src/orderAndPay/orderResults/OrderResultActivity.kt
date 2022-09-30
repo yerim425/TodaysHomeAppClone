@@ -12,6 +12,10 @@ class OrderResultActivity : BaseActivity<ActivityOrderResultBinding>(ActivityOrd
 
         binding.tvAccountNumber.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 
+        binding.tvOrderProduct.text = intent.getStringExtra("optionName")
+        binding.tvDeliveryDestination.text = intent.getStringExtra("address")
+        binding.tvPaymentAmount.text = intent.getStringExtra("price")
+        binding.tvDepositAmount.text = intent.getStringExtra("price")
         binding.ivBack.setOnClickListener {
             finish()
         }

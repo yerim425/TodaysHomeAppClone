@@ -10,7 +10,7 @@ import com.example.risingtest.config.BaseFragment
 import com.example.risingtest.databinding.FragmentNoReviewInProductDetialBinding
 
 class NoReviewInProductDetialFragment : BaseFragment<FragmentNoReviewInProductDetialBinding>(
-    FragmentNoReviewInProductDetialBinding::bind, R.layout.fragment_review_in_product_detail) {
+    FragmentNoReviewInProductDetialBinding::bind, R.layout.fragment_no_review_in_product_detial) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

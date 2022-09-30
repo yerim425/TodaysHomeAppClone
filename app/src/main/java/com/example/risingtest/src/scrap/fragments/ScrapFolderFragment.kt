@@ -6,8 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.risingtest.R
+import com.example.risingtest.src.scrap.ScrapActivity
 
-class ScrapFolderFragment : Fragment() {
+class ScrapFolderFragment(val activity: ScrapActivity) : Fragment() {
 
 
     override fun onCreateView(

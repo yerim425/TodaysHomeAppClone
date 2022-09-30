@@ -21,11 +21,12 @@ import com.example.risingtest.config.ApplicationClass.Companion.sSharedPreferenc
 import com.example.risingtest.config.BaseFragment
 
 import com.example.risingtest.databinding.FragmentStoreBinding
-import com.example.risingtest.src.main.store.productDetail.models.ProductDetailResponse
-import com.example.risingtest.src.main.store.models.productScrap.ProductScrapResponse
+import com.example.risingtest.src.main.models.productScrap.ProductScrapResponse
+import com.example.risingtest.src.main.models.productScrapCancel.ProductScrapCancelResponse
 import com.example.risingtest.src.main.store.models.storePage.ResultStorePage
 import com.example.risingtest.src.main.store.models.storePage.StorePageResponse
 import com.example.risingtest.src.main.store.models.storePage.StorePageProduct
+import com.example.risingtest.src.main.store.productDetail.models.productDetail.ProductDetailResponse
 import com.example.risingtest.src.main.store.storeCategoryRv.StoreCategoryRvAdapter
 import com.example.risingtest.src.main.store.storeCategoryRv.StoreCategoryRvItemData
 import com.example.risingtest.src.main.store.storeMainRv.StoreMainRvAdapter
@@ -34,6 +35,8 @@ import com.example.risingtest.src.main.store.storeTopRv.StoreTopRvAdapter
 import com.example.risingtest.src.main.store.storeTopRv.StoreTopRvItemData
 import com.example.risingtest.src.scrap.ScrapActivity
 import com.example.risingtest.src.shoppingBasket.ShoppingBasketActivity
+
+lateinit var storeFragment : StoreFragment
 
 class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::bind, R.layout.fragment_store),
     StoreFragmentInterface{
@@ -50,12 +53,12 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::b
     var userIdx: Int = -1
     lateinit var storePageResult : ResultStorePage
 
-    lateinit var fragment : StoreFragment
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        fragment = this
+        storeFragment = this
         userIdx = sSharedPreferences.getString("userIdx", null)!!.toInt()
         Log.d("storeFragment", "userIdx="+userIdx.toString())
         showLoadingDialog(requireContext())
@@ -245,7 +248,9 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::b
 
     override fun onGetStorePageFailure(message: String) {
         dismissLoadingDialog()
-        showCustomToast(message)
+        showCustomToast("스토어 페이지 요청 실패")
+        Log.d("StoreFragment", message)
+
     }
 
 
@@ -256,6 +261,16 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::b
 
     override fun onPostProductScrapFailure(message: String) {
         showCustomToast("상품 스크랩 실패")
+        Log.d("StoreFragment", message)
+    }
+
+    override fun onPatchProductScrapSuccess(response: ProductScrapCancelResponse) {
+
+    }
+
+    override fun onPatchProductScrapFailure(message: String) {
+        showCustomToast("상품 스크랩 취소 실패")
+        Log.d("StoreFragment", message)
     }
 
     override fun onGetProductDetailSuccess(response: ProductDetailResponse) {
@@ -264,6 +279,7 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::b
 
     override fun onGetProductDetailFailure(message: String) {
         showCustomToast("상품 상세 화면 요청 실패")
+        Log.d("StoreFragment", message)
     }
 
     fun createToast(context: Context): Toast?{

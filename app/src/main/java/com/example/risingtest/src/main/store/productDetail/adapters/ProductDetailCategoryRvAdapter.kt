@@ -36,6 +36,7 @@ class ProductDetailCategoryRvAdapter: RecyclerView.Adapter<ProductDetailCategory
 
     fun getListFromView(nList: MutableList<String>){
         list = nList
+        notifyDataSetChanged()
     }
 
 }

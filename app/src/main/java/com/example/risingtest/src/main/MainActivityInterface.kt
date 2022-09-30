@@ -1,6 +1,6 @@
 package com.example.risingtest.src.main
 
-import com.example.risingtest.src.main.models.MyProfileResponse
+import com.example.risingtest.src.main.models.myprofile.MyProfileResponse
 
 
 interface MainActivityInterface {

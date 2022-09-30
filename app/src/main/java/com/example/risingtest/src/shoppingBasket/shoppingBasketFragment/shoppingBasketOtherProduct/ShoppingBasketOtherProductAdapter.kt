@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.risingtest.databinding.ItemRvProductBaseBinding
-import com.example.risingtest.src.main.store.storeMainRv.storeProductRv.StoreProductItemData
+import com.example.risingtest.src.main.store.models.storePage.StorePageProduct
 
 class ShoppingBasketOtherProductAdapter: RecyclerView.Adapter<ShoppingBasketOtherProductAdapter.ViewHolder>() {
 
-    var list = mutableListOf<StoreProductItemData>()
+    var list = mutableListOf<StorePageProduct>()
 
     inner class ViewHolder(val binding: ItemRvProductBaseBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(item: StoreProductItemData){
+        fun bind(item: StorePageProduct){
 
         }
     }
@@ -28,7 +28,7 @@ class ShoppingBasketOtherProductAdapter: RecyclerView.Adapter<ShoppingBasketOthe
         return list.size
     }
 
-    fun getListFromView(nList: MutableList<StoreProductItemData>){
+    fun getListFromView(nList: MutableList<StorePageProduct>){
         list = nList
     }
 

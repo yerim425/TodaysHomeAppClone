@@ -1,4 +1,4 @@
-package com.example.risingtest.src.scrap.fragments
+package com.example.risingtest.src.scrap.fragments.scrapAll
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,10 +12,13 @@ import com.example.risingtest.R
 import com.example.risingtest.config.BaseFragment
 import com.example.risingtest.databinding.FragmentScrapAllBinding
 import com.example.risingtest.databinding.ItemScrapProductSimpleBinding
+import com.example.risingtest.src.scrap.ScrapActivity
 import com.example.risingtest.src.scrap.datas.ScrapAllItemData
+import com.example.risingtest.src.scrap.fragments.scrapAll.scrapedAllItem.ScrabItem
 
 
-class ScrapAllFragment : BaseFragment<FragmentScrapAllBinding>(FragmentScrapAllBinding::bind, R.layout.fragment_scrap_all){
+class ScrapedAllFragment(val activity: ScrapActivity) : BaseFragment<FragmentScrapAllBinding>(
+    FragmentScrapAllBinding::bind, R.layout.fragment_scrap_all){
 
     var editLayoutVisible = false
     lateinit var allScrapRvAdapter: AllScrapRvAdapter
@@ -23,6 +26,7 @@ class ScrapAllFragment : BaseFragment<FragmentScrapAllBinding>(FragmentScrapAllB
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         binding.tvEdit.setOnClickListener {
             editLayoutVisible = true
@@ -42,31 +46,28 @@ class ScrapAllFragment : BaseFragment<FragmentScrapAllBinding>(FragmentScrapAllB
 
         }
 
-        allScrapRvAdapter = AllScrapRvAdapter()
-        allScrapRvAdapter.getListFromView(setList())
-        binding.rvScrap.layoutManager = GridLayoutManager(context, 2)
-        binding.rvScrap.adapter = allScrapRvAdapter
 
-
-
+        if(activity.scrapedAllResult.scrabBanner.scrabTotalCount == 0){
+            binding.tvNoContents.visibility=View.VISIBLE
+        }else{
+            binding.tvNoContents.visibility=View.INVISIBLE
+            allScrapRvAdapter = AllScrapRvAdapter()
+            allScrapRvAdapter.getListFromView(setList())
+            binding.rvScrap.layoutManager = GridLayoutManager(context, 2)
+            binding.rvScrap.adapter = allScrapRvAdapter
+        }
 
 
     }
 
-    fun setList(): MutableList<ScrapAllItemData>{
+    fun setList(): MutableList<ScrabItem>{
 
-        var list = mutableListOf<ScrapAllItemData>()
-        list.add(ScrapAllItemData(R.drawable.img_prod1_1, getString(R.string.product), false))
-        list.add(ScrapAllItemData(R.drawable.img_prod1_2, getString(R.string.product), false))
-        list.add(ScrapAllItemData(R.drawable.img_prod1_3, getString(R.string.product), false))
-        list.add(ScrapAllItemData(R.drawable.img_prod2, getString(R.string.product), false))
-        list.add(ScrapAllItemData(R.drawable.img_prod3, getString(R.string.product), false))
-        list.add(ScrapAllItemData(R.drawable.img_prod3, getString(R.string.product), false))
-        list.add(ScrapAllItemData(R.drawable.img_prod3, getString(R.string.product), false))
-        list.add(ScrapAllItemData(R.drawable.img_prod3, getString(R.string.product), false))
-        list.add(ScrapAllItemData(R.drawable.img_prod3, getString(R.string.product), false))
-        list.add(ScrapAllItemData(R.drawable.img_prod3, getString(R.string.product), false))
+        var list = mutableListOf<ScrabItem>()
+        for(item in activity.scrapedAllResult.scrabItems){
+            list.add(item)
+        }
         return list
+
     }
 
 
@@ -74,12 +75,25 @@ class ScrapAllFragment : BaseFragment<FragmentScrapAllBinding>(FragmentScrapAllB
 
     inner class AllScrapRvAdapter: RecyclerView.Adapter<AllScrapRvAdapter.ViewHolder>(){
 
-        var list = mutableListOf<ScrapAllItemData>()
+        var list = mutableListOf<ScrabItem>()
 
         inner class ViewHolder(val binding: ItemScrapProductSimpleBinding): RecyclerView.ViewHolder(binding.root){
-            fun bind(item: ScrapAllItemData){
+            fun bind(item: ScrabItem){
 
-                binding.ivProdScrap.setImageResource(item.img)
+                Glide.with(binding.ivProdScrap)
+                    .load(item.imageUrl)
+                    .placeholder(R.drawable.shape_gray2_view_rounded_5)
+                    .error(R.drawable.shape_gray2_view_rounded_5)
+                    .fallback(R.drawable.shape_gray2_view_rounded_5)
+                    .override(470  , 470)
+                    .centerCrop()
+                    .apply(RequestOptions.centerCropTransform())
+                    .into(binding.ivProdScrap)
+
+                when(item.type){
+                    "Photo" -> {binding.tvProdCategory.text = getString(R.string.photo)}
+                    "Product" -> {binding.tvProdCategory.text = getString(R.string.product)}
+                }
 
                 if(showCheckBox){
                     binding.cbEdit.visibility = View.VISIBLE
@@ -101,7 +115,7 @@ class ScrapAllFragment : BaseFragment<FragmentScrapAllBinding>(FragmentScrapAllB
             return list.size
         }
 
-        fun getListFromView(nList: MutableList<ScrapAllItemData>){
+        fun getListFromView(nList: MutableList<ScrabItem>){
             list = nList
         }
 

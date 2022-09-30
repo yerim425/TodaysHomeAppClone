@@ -23,6 +23,8 @@ class PaymentMeansAdapter(val activity: OrderAndPayActivity): RecyclerView.Adapt
         R.drawable.img_payment_means_payco_benefit
     )
 
+    lateinit var selectedPaymentMethod: String
+
     inner class ViewHolder(val binding: ItemPaymentMeansBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(item: PaymentMeansItemData){
             binding.tvPaymentMeans.text = item.title
@@ -51,6 +53,8 @@ class PaymentMeansAdapter(val activity: OrderAndPayActivity): RecyclerView.Adapt
                 }
                 binding.layoutPaymentMeans.background = getDrawable(activity, R.drawable.shape_blue_view_edge)
                 binding.tvPaymentMeans.typeface = Typeface.DEFAULT_BOLD
+
+                selectedPaymentMethod = binding.tvPaymentMeans.text.toString()
 
                 when(binding.tvPaymentMeans.text){
                     "카드" -> {
@@ -90,6 +94,10 @@ class PaymentMeansAdapter(val activity: OrderAndPayActivity): RecyclerView.Adapt
         activity.findViewById<ConstraintLayout>(R.id.layout_pay_by_card).visibility = View.GONE
         activity.findViewById<ConstraintLayout>(R.id.layout_pay_by_others).visibility = View.VISIBLE
         activity.findViewById<ImageView>(R.id.iv_pay_by_others).setImageResource(benefitDetailList[idx])
+    }
+
+    fun getSelectedPayment(): String{
+        return selectedPaymentMethod
     }
 
 }

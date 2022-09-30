@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.example.risingtest.util.LoadingDialog
 import com.example.risingtest.util.LoadingTextDialog
 
 abstract class BaseActivity<B: ViewBinding>(private val inflate: (LayoutInflater) -> B):
@@ -15,7 +16,7 @@ abstract class BaseActivity<B: ViewBinding>(private val inflate: (LayoutInflater
         private set
 
     lateinit var loadingTextDialog: LoadingTextDialog
-    lateinit var lodingDialog: LoadingTextDialog
+    lateinit var lodingDialog: LoadingDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +43,7 @@ abstract class BaseActivity<B: ViewBinding>(private val inflate: (LayoutInflater
     }
 
     fun showLoadingDialog(context: Context) {
-        lodingDialog = LoadingTextDialog(context)
+        lodingDialog = LoadingDialog(context)
         lodingDialog.show()
     }
 

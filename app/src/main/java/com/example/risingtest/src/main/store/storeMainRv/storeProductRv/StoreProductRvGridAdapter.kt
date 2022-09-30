@@ -2,6 +2,7 @@ package com.example.risingtest.src.main.store.storeMainRv.storeProductRv
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ import com.example.risingtest.src.main.store.StoreFragmentService
 import com.example.risingtest.src.main.store.models.storePage.StorePageProduct
 import com.example.risingtest.src.main.store.productDetail.ProductDetailActivity
 import java.text.DecimalFormat
+import kotlin.math.roundToInt
 
 class StoreProductRvGridAdapter(
     var prodList: MutableList<StorePageProduct>, val context: Context, val fragment: StoreFragment, val userIdx: Int)
@@ -48,13 +50,14 @@ class StoreProductRvGridAdapter(
                 binding.tvProdPrice.text = getDecimalFormat(originalPrice)
             }else{
                 binding.tvProdSalePercentage.visibility = View.VISIBLE
-                var discountedPercentage = (100/(originalPrice/discountedPrice))
+                var discountedPercentage = getdiscountPercentage(originalPrice, discountedPrice)
                 binding.tvProdSalePercentage.text = discountedPercentage.toString() + "%"
-                binding.tvProdPrice.text = getDecimalFormat(discountedPrice)
+                binding.tvProdPrice.text = getDecimalFormat(originalPrice-discountedPrice)
             }
 
             // 제품 평점
-            binding.tvProdRating.text = item.totalScore.toString()
+            var score = ((item.totalScore * 10.0).roundToInt() / 10.0)
+            binding.tvProdRating.text = score.toString()
 
             // 제품 리뷰 개수
             binding.tvProdReviewNum.text = getDecimalFormat(item.numReviews)
@@ -73,21 +76,26 @@ class StoreProductRvGridAdapter(
 
                     editor.putString(scrapProduct, "true")
                 }else{
+                    StoreFragmentService(fragment).tryPatchProductScrapCancel(userIdx, item.productId)
+
                     editor.putString(scrapProduct, "false")
                 }
                 editor.commit()
                 fragment.storeMainAdapter.notifyDataSetChanged()
             }
-        }
 
-        init{
             binding.layoutProduct.setOnClickListener {
                 val intent = Intent(context, ProductDetailActivity::class.java)
                 intent.putExtra("newActivity", R.drawable.anim_slide_in_right.toString())
                 intent.putExtra("preActivity", R.drawable.anim_slide_out_left.toString())
+                intent.putExtra("productId", item.productId)
+                intent.putExtra("userIdx", userIdx)
+
                 context.startActivity(intent)
             }
         }
+
+
 
 
     }
@@ -107,5 +115,9 @@ class StoreProductRvGridAdapter(
     fun getDecimalFormat(number: Int): String {
         val deciaml = DecimalFormat("#,###")
         return deciaml.format(number)
+    }
+
+    fun getdiscountPercentage(originalPrice: Int, discountedPrice: Int): Int{
+        return (discountedPrice.toDouble()/originalPrice.toDouble()*100.0).toInt()
     }
 }

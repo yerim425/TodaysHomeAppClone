@@ -2,9 +2,10 @@ package com.example.risingtest.src.main.store
 
 import android.util.Log
 import com.example.risingtest.config.ApplicationClass
-import com.example.risingtest.src.main.store.productDetail.models.ProductDetailResponse
-import com.example.risingtest.src.main.store.models.productScrap.ProductScrapResponse
+import com.example.risingtest.src.main.models.productScrap.ProductScrapResponse
+import com.example.risingtest.src.main.models.productScrapCancel.ProductScrapCancelResponse
 import com.example.risingtest.src.main.store.models.storePage.StorePageResponse
+import com.example.risingtest.src.main.store.productDetail.models.productDetail.ProductDetailResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -51,6 +52,27 @@ class StoreFragmentService(val storeFragmentInterface: StoreFragmentInterface) {
 
             override fun onFailure(call: Call<ProductScrapResponse>, t: Throwable) {
                 storeFragmentInterface.onPostProductScrapFailure(t.message ?: "통신 오류")
+            }
+        })
+    }
+
+    // 상품 스크랩 취소 요청
+    fun tryPatchProductScrapCancel(userIdx: Int, productId: Int){
+        val storeRetrofitInterface = ApplicationClass.sRetrofit.create(StoreRetrofitInterface::class.java)
+        storeRetrofitInterface.patchProductScrapCancel(userIdx, productId).enqueue(object : Callback<ProductScrapCancelResponse>{
+            override fun onResponse(
+                call: Call<ProductScrapCancelResponse>,
+                response: Response<ProductScrapCancelResponse>
+            ) {
+                if(response.body() != null){
+                    storeFragmentInterface.onPatchProductScrapSuccess(response.body() as ProductScrapCancelResponse)
+                }else{
+                    Log.d("StoreService", "ProductScrapCancelResponse.body is null")
+                }
+            }
+
+            override fun onFailure(call: Call<ProductScrapCancelResponse>, t: Throwable) {
+                storeFragmentInterface.onPatchProductScrapFailure(t.message ?: "통신 오류")
             }
         })
     }

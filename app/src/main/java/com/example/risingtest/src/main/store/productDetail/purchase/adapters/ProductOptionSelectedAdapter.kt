@@ -6,21 +6,37 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.risingtest.R
 import com.example.risingtest.databinding.ItemProductOptionSelectedBinding
+import com.example.risingtest.src.main.store.productDetail.models.productDetail.Option
 import com.example.risingtest.src.main.store.productDetail.purchase.datas.ProductOptionSelectedItemData
+import com.example.risingtest.src.main.store.productDetail.purchase.dialogs.ProductPurchaseDialog
+import com.example.risingtest.src.main.store.productDetail.purchase.dialogs.productTotalPrice
+import java.text.DecimalFormat
 
-class ProductOptionSelectedAdapter: RecyclerView.Adapter<ProductOptionSelectedAdapter.ViewHolder>() {
+class ProductOptionSelectedAdapter(val dialog: ProductPurchaseDialog, val price: Int)
+    : RecyclerView.Adapter<ProductOptionSelectedAdapter.ViewHolder>() {
 
-    var list = mutableListOf<ProductOptionSelectedItemData>()
+    var list = mutableListOf<Option>()
+    var optionTotalPriceList = mutableListOf<Int>()
+    var productNumber = 1
 
     inner class ViewHolder(val binding: ItemProductOptionSelectedBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(item: ProductOptionSelectedItemData){
-            binding.tvOptionTitle.text = item.title
-            binding.tvProductOptionAmount.text = item.price
-        }
+        fun bind(item: Option){
+            binding.tvOptionTitle.text = item.optionName
+            binding.tvProductOptionAmount.text = getDecimalFormat(price+item.optionPrice) +"원"
+            binding.tvProductNum.text = "1"
 
-        init{
+            optionTotalPriceList.add((price+item.optionPrice))
+
+            productTotalPrice += (price+item.optionPrice)
+            dialog.setProductTotalPrice(productTotalPrice)
+
+
             binding.ivProductDelete.setOnClickListener {
+                productTotalPrice -= optionTotalPriceList[adapterPosition]
+                dialog.setProductTotalPrice(productTotalPrice)
+                optionTotalPriceList.removeAt(adapterPosition)
                 list.removeAt(adapterPosition)
+
                 notifyDataSetChanged()
             }
 
@@ -28,16 +44,30 @@ class ProductOptionSelectedAdapter: RecyclerView.Adapter<ProductOptionSelectedAd
                 var num = binding.tvProductNum.text.toString().toInt()
                 num++
                 binding.tvProductNum.text = num.toString()
+                productNumber++
+                optionTotalPriceList[adapterPosition] += (price+item.optionPrice)
+                binding.tvProductOptionAmount.text = getDecimalFormat(optionTotalPriceList[adapterPosition]) + "원"
+
+                productTotalPrice += (price+item.optionPrice)
+                dialog.setProductTotalPrice(productTotalPrice)
             }
             binding.ivNumMinus.setOnClickListener {
                 var num = binding.tvProductNum.text.toString().toInt()
                 if(num > 1){
                     num--
                     binding.tvProductNum.text = num.toString()
+                    productNumber--
+
+                    optionTotalPriceList[adapterPosition] -= (price+item.optionPrice)
+                    binding.tvProductOptionAmount.text = getDecimalFormat(optionTotalPriceList[adapterPosition])+ "원"
+
+                    productTotalPrice -= (price+item.optionPrice)
+                    dialog.setProductTotalPrice(productTotalPrice)
                 }
 
             }
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -52,9 +82,31 @@ class ProductOptionSelectedAdapter: RecyclerView.Adapter<ProductOptionSelectedAd
         return list.size
     }
 
-    fun addProduct(item: ProductOptionSelectedItemData){
+    fun addProduct(item: Option){
         list.add(item)
         notifyItemInserted(list.size-1)
         //notifyDataSetChanged()
     }
+
+    fun getDecimalFormat(number: Int): String {
+        val deciaml = DecimalFormat("#,###")
+        return deciaml.format(number)
+    }
+
+    fun getOptionName(): String{
+        return list[0].optionName
+    }
+
+    fun getProductNum(): Int{
+        return productNumber
+    }
+
+    fun getOptionId(): Int{
+        return list[0].productOptionId
+    }
+
+    fun getProductId(): Int{
+        return list[0].productId
+    }
+
 }

@@ -3,17 +3,27 @@ package com.example.risingtest.src.main.store.productDetail.review
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.example.risingtest.R
 import com.example.risingtest.databinding.ItemProductDetailRvReviewPhotosBinding
 
 class ReviewPhotosRvAdapter: RecyclerView.Adapter<ReviewPhotosRvAdapter.ViewHolder>() {
 
-    var list = mutableListOf<Int>()
+    var list = mutableListOf<String>()
 
     inner class ViewHolder(val binding: ItemProductDetailRvReviewPhotosBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(image: Int){
+        fun bind(imageUrl: String){
 
-            binding.image.setImageResource(image)
-
+            Glide.with(binding.image)
+                .load(imageUrl)
+                .placeholder(R.drawable.shape_gray2_view_rounded_5)
+                .error(R.drawable.shape_gray2_view_rounded_5)
+                .fallback(R.drawable.shape_gray2_view_rounded_5)
+                .override(250, 250)
+                .centerCrop()
+                .apply(RequestOptions.centerCropTransform())
+                .into(binding.image)
 
         }
     }
@@ -30,7 +40,7 @@ class ReviewPhotosRvAdapter: RecyclerView.Adapter<ReviewPhotosRvAdapter.ViewHold
         return list.size
     }
 
-    fun getListFromView(nList: MutableList<Int>){
+    fun getListFromView(nList: MutableList<String>){
         list = nList
     }
 

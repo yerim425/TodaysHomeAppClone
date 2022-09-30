@@ -1,4 +1,4 @@
-package com.example.risingtest.src.main.store.productDetail.models
+package com.example.risingtest.src.main.store.productDetail.models.productDetail
 
 data class Option(
     val createdAt: String,

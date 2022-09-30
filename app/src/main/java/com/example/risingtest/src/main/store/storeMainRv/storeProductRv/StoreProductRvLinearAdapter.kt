@@ -3,6 +3,7 @@ package com.example.risingtest.src.main.store.storeMainRv.storeProductRv
 import android.content.Context
 import android.content.Intent
 import android.graphics.Typeface
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,7 @@ import com.example.risingtest.src.main.store.productDetail.ProductDetailActivity
 import java.text.DecimalFormat
 import java.util.*
 import com.example.risingtest.src.main.store.StoreFragmentService
+import kotlin.math.roundToInt
 
 class StoreProductRvLinearAdapter(
     var prodList: MutableList<StorePageProduct>, val context: Context, val fragment: StoreFragment, val userIdx: Int)
@@ -45,19 +47,20 @@ class StoreProductRvLinearAdapter(
             binding.tvProdBrand.text = item.brandName
 
             // 제품 할인율, 할인된 가격
-            var discountedPrice = item.discountedPrice
+            var discountedPrice = item.discountedPrice // 할인할 가격
             var originalPrice = item.originalPrice
             if(discountedPrice == 0){
                 binding.tvProdSalePercentage.visibility = View.GONE
                 binding.tvProdPrice.text = getDecimalFormat(originalPrice)
             }else{
                 binding.tvProdSalePercentage.visibility = View.VISIBLE
-                var discountedPercentage = (100/(originalPrice/discountedPrice))
+                var discountedPercentage = getdiscountPercentage(originalPrice, discountedPrice)
                 binding.tvProdSalePercentage.text = discountedPercentage.toString() + "%"
-                binding.tvProdPrice.text = getDecimalFormat(discountedPrice)
+                binding.tvProdPrice.text = getDecimalFormat(originalPrice-discountedPrice)
             }
             // 제품 평점
-            binding.tvProdRating.text = item.totalScore.toString()
+            var score = ((item.totalScore * 10.0).roundToInt() / 10.0)
+            binding.tvProdRating.text = score.toString()
 
             // 제품 리뷰 개수
             binding.tvProdReviewNum.text = getDecimalFormat(item.numReviews)
@@ -68,14 +71,15 @@ class StoreProductRvLinearAdapter(
                 binding.tvProdReview.typeface = Typeface.DEFAULT
                 binding.tvProdReviewNum.typeface = Typeface.DEFAULT
                 binding.tvProdRemainTime.visibility = View.VISIBLE
-                var rand = Random().nextInt(6)+1
-                binding.tvProdRemainTime.text = rand.toString() + "일 남음"
+                val remainDate = getRemainDate(item.eventDeadline)
+                binding.tvProdRemainTime.text = remainDate + "일 남음"
+                item.remainDate = remainDate
             }else{
                 binding.tvProdRemainTime.visibility = View.GONE
             }
 
             binding.cbScrap.isChecked = item.isScrabbed
-            // 서버 완성되면 제거하기
+            // 서버 수정되면 제거하기
             var scrapProduct = "scrapProduct"+item.productId.toString()
             binding.cbScrap.isChecked = sSharedPreferences.getString(scrapProduct, "false").toBoolean()
 
@@ -88,6 +92,8 @@ class StoreProductRvLinearAdapter(
 
                     editor.putString(scrapProduct, "true")
                 }else{
+                    StoreFragmentService(fragment).tryPatchProductScrapCancel(userIdx, item.productId)
+
                     editor.putString(scrapProduct, "false")
                 }
                 editor.commit()
@@ -99,7 +105,12 @@ class StoreProductRvLinearAdapter(
                 val intent = Intent(context, ProductDetailActivity::class.java)
                 intent.putExtra("newActivity", R.drawable.anim_slide_in_right.toString())
                 intent.putExtra("preActivity", R.drawable.anim_slide_out_left.toString())
+                intent.putExtra("productId", item.productId)
+                intent.putExtra("userIdx", userIdx)
 
+                if(item.remainDate != null){
+                    intent.putExtra("remainDate", item.remainDate)
+                }
                 context.startActivity(intent)
             }
         }
@@ -116,8 +127,55 @@ class StoreProductRvLinearAdapter(
     override fun getItemCount(): Int {
         return prodList.size
     }
+
+
     fun getDecimalFormat(number: Int): String {
         val deciaml = DecimalFormat("#,###")
         return deciaml.format(number)
+    }
+
+
+    fun getdiscountPercentage(originalPrice: Int, discountedPrice: Int): Int{
+        return (discountedPrice.toDouble()/originalPrice.toDouble()*100.0).toInt()
+
+    }
+
+    fun getRemainDate(deadlineDate: String): String{
+
+        val todayCal = Calendar.getInstance()
+        todayCal.add(Calendar.DAY_OF_YEAR, 0)
+        val todayYear = todayCal.get(Calendar.YEAR)
+        val todayMonth = (todayCal.get(Calendar.MONTH) + 1)
+        val todayDay = todayCal.get(Calendar.DATE)
+        Log.d("getDate", todayYear.toString()+ " " + todayMonth.toString()+ " " + todayDay.toString())
+        val beginDay = Calendar.getInstance().apply {
+            set(Calendar.YEAR, todayYear)
+            set(Calendar.MONTH, todayMonth)
+            set(Calendar.DAY_OF_MONTH, todayDay)
+        }.timeInMillis
+
+        val deadlineYear = deadlineDate.substring(0 until 4).toInt()
+        val deadlineMonth = deadlineDate.substring(5 until 7).toInt()
+        val deadlineDay = deadlineDate.substring(8 until 10).toInt()
+        Log.d("getDate", deadlineYear.toString()+ " " + deadlineMonth.toString()+ " " + deadlineDay.toString())
+
+        val lastDay = Calendar.getInstance().apply {
+            set(Calendar.YEAR, deadlineYear)
+            set(Calendar.MONTH, deadlineMonth)
+            set(Calendar.DAY_OF_MONTH, deadlineDay)
+        }.timeInMillis
+
+        val result = getIgnoredTimeDays(lastDay) - getIgnoredTimeDays(beginDay)
+        return (result/(24*60*60*1000)).toString()
+    }
+    fun getIgnoredTimeDays(time: Long):Long{
+        return Calendar.getInstance().apply {
+            timeInMillis = time
+
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }.timeInMillis
     }
 }

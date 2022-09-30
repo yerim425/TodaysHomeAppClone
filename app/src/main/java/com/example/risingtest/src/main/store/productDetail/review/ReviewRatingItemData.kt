@@ -4,5 +4,5 @@ data class ReviewRatingItemData(
     val score: String,
     val thisNum: Int,
     val totalNum: Int,
-    val most: Boolean
+    val isMost: Boolean
 )

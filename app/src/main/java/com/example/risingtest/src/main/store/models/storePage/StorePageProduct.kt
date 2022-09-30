@@ -1,5 +1,7 @@
 package com.example.risingtest.src.main.store.models.storePage
 
+import java.util.*
+
 data class StorePageProduct(
     val brandName: String,
     val discountedPrice: Int,
@@ -9,6 +11,8 @@ data class StorePageProduct(
     val originalPrice: Int,
     val productId: Int,
     val thumbnailUrl: String,
-    val totalScore: Double,
-    var isTodaysDeal: Boolean ?= false
+    val totalScore: Float,
+    var isTodaysDeal: Boolean,
+    var eventDeadline: String,
+    var remainDate: String ?= null,
 )

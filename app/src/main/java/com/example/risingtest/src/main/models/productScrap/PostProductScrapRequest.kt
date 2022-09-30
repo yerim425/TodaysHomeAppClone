@@ -1,4 +1,4 @@
-package com.example.risingtest.src.main.store.models.productScrap
+package com.example.risingtest.src.main.models.productScrap
 
 import com.google.gson.annotations.SerializedName
 

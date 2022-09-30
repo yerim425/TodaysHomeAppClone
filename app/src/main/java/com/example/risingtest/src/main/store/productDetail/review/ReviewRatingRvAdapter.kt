@@ -19,13 +19,13 @@ class ReviewRatingRvAdapter(val context: Context): RecyclerView.Adapter<ReviewRa
         fun bind(item: ReviewRatingItemData){
             binding.tvScore.text = item.score
 
-            var amount = item.thisNum * (item.totalNum*0.01)
-            binding.progressBar.progress = amount.toInt()
-            Log.d("ReviewRatingRvAdapter", amount.toString())
+//            var amount = item.thisNum * (item.totalNum*0.01)
+            binding.progressBar.max = item.totalNum
+            binding.progressBar.progress = item.thisNum
 
             binding.tvNum.text = item.thisNum.toString()
 
-            if(item.most){
+            if(item.isMost){
                 binding.tvScore.setTextColor(getColor(context, R.color.colorAccent))
                 binding.tvScore.setTypeface(Typeface.DEFAULT_BOLD)
                 binding.tvNum.setTextColor(Color.BLACK)

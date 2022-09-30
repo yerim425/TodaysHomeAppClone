@@ -10,7 +10,7 @@ import com.example.risingtest.config.ApplicationClass.Companion.sSharedPreferenc
 import com.example.risingtest.config.BaseActivity
 import com.example.risingtest.databinding.ActivityMainBinding
 import com.example.risingtest.src.main.home.HomeFragment
-import com.example.risingtest.src.main.models.MyProfileResponse
+import com.example.risingtest.src.main.models.myprofile.MyProfileResponse
 import com.example.risingtest.src.main.moveConstructRepair.MoveConstructRepairFragment
 import com.example.risingtest.src.main.myPage.MyPageFragment
 import com.example.risingtest.src.main.store.StoreFragment
@@ -119,8 +119,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     override fun onGetMyProfileSuccess(response: MyProfileResponse) {
         var editor = sSharedPreferences.edit()
-        //editor.putString("userNickName", response.result.nickname)
-        //editor.commit()
+        editor.putString("userNickName", response.result.nickname)
+        editor.commit()
     }
 
     override fun onGetMyProfileFailure(message: String) {

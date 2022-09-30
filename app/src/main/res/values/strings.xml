@@ -87,6 +87,7 @@
     <string name="scraped_it">스크랩했습니다.</string>
     <string name="see_scrapbook">스크랩북 보기</string>
     <string name="put_in_folder">폴더에 담기</string>
+    <string name="photo">사진</string>
 
     <!-- 장바구니 액티비티 -->
     <string name="shopping_cart">장바구니</string>
@@ -130,6 +131,7 @@
     <string name="welcome_0.1_accumulate">적립 (WELCOME 0.1\% 적립)</string>
     <string name="month">월</string>
     <string name="months">개월</string>
+    <string name="free_delivery">무료배송</string>
     <string name="interest_free_installment">무이자할부</string>
     <string name="jeju_island_mountain_island">제주도\/도서산간</string>
     <string name="differential_delivery_cost_by_region">지역별 차등배송비</string>

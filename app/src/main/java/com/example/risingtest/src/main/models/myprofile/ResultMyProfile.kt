@@ -1,4 +1,4 @@
-package com.example.risingtest.src.main.models
+package com.example.risingtest.src.main.models.myprofile
 
 data class ResultMyProfile(
     val baphotoUrl: Any,

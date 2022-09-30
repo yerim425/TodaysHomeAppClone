@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.risingtest.R
 import com.example.risingtest.config.BaseFragment
 import com.example.risingtest.databinding.FragmentShoppingBasketBinding
-import com.example.risingtest.src.main.store.storeMainRv.storeProductRv.StoreProductItemData
+import com.example.risingtest.src.main.store.models.storePage.StorePageProduct
 import com.example.risingtest.src.orderAndPay.OrderAndPayActivity
 import com.example.risingtest.src.shoppingBasket.shoppingBasketFragment.shoppingBasketOtherProduct.ShoppingBasketOtherProductAdapter
 import com.example.risingtest.src.shoppingBasket.shoppingBasketFragment.shoppingBasketProduct.ShoppingBasketProductAdapter
@@ -52,9 +52,9 @@ class ShoppingBasketFragment : BaseFragment<FragmentShoppingBasketBinding>(
 
     }
 
-    fun setShoppingBasketOtherProductList(): MutableList<StoreProductItemData>{
+    fun setShoppingBasketOtherProductList(): MutableList<StorePageProduct>{
 
-        var list = mutableListOf<StoreProductItemData>()
+        var list = mutableListOf<StorePageProduct>()
         //list.add(StoreProductItemData())
         //list.add(StoreProductItemData())
         //list.add(StoreProductItemData())
