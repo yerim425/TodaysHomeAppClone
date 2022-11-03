@@ -9,7 +9,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowLightStatusBar">true</item>
-
     </style>
 
     <style name="main_btm_nav_text_style">
