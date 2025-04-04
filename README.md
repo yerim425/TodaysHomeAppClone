@@ -1,4 +1,5 @@
-# today-s_house_android_haru
+# 오늘의 집 클론
+today-s_house_android_haru
 
 2022/09/17
   1. 스플래시 화면 xml - 100%
