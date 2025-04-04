@@ -1,4 +1,4 @@
-# 오늘의 집 클론
+# 오늘의 집 App Clone
 today-s_house_android_haru
 
 2022/09/17
